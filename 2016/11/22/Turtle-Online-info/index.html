@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  
+  <title>Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发 | Alec Yin&#39;s World | 静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="Turtle框架">
+  <meta name="description" content="关于Turtle OnlineTurtle online 是Turtle框架的PC前端架构，包括组件和API两大部分，可以快速的搭建PC前端开发环境。组件包括日历、分页、图片轮播/图片浏览、各类提示弹框/自定义弹层、气泡提示、图标icon、表单等。API包括常用JS方法封装（cookie操作、ajax封装、日期处理、浏览器判断、当前位置获取页面跳转、其他常用方法等）、基于Backbone.View">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发">
+<meta property="og:url" content="http://lhyin.com/2016/11/22/Turtle-Online-info/index.html">
+<meta property="og:site_name" content="Alec Yin's World">
+<meta property="og:description" content="关于Turtle OnlineTurtle online 是Turtle框架的PC前端架构，包括组件和API两大部分，可以快速的搭建PC前端开发环境。组件包括日历、分页、图片轮播/图片浏览、各类提示弹框/自定义弹层、气泡提示、图标icon、表单等。API包括常用JS方法封装（cookie操作、ajax封装、日期处理、浏览器判断、当前位置获取页面跳转、其他常用方法等）、基于Backbone.View">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/800vk.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-0.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-1.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-2.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-3.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-4.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-5.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-6.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-7.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-8.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-9.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-10.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-11.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-12.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-13.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/turtleOnline-14.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/zfb.png">
+<meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/wx.png">
+<meta property="og:updated_time" content="2016-11-22T08:49:10.970Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发">
+<meta name="twitter:description" content="关于Turtle OnlineTurtle online 是Turtle框架的PC前端架构，包括组件和API两大部分，可以快速的搭建PC前端开发环境。组件包括日历、分页、图片轮播/图片浏览、各类提示弹框/自定义弹层、气泡提示、图标icon、表单等。API包括常用JS方法封装（cookie操作、ajax封装、日期处理、浏览器判断、当前位置获取页面跳转、其他常用方法等）、基于Backbone.View">
+<meta name="twitter:image" content="http://oh16enj0m.bkt.clouddn.com/800vk.png">
+  
+  <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1.2">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-angle-double-left"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/author.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">殷路辉(Alec)</h5>
+          <a href="mailto:1020362662@qq.com" title="1020362662@qq.com" class="mail">1020362662@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                时间轴
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                分类
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/yinluhui" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                开源中国
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Alec-Yin" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.cnblogs.com/yinluhui0229" target="_blank" >
+                <i class="icon icon-lg icon-rss-square"></i>
+                博客园
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-online/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-tv"></i>
+                Turtle Online
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-mobile/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-mobile"></i>
+                Turtle Mobile
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-heartbeat"></i>
+                关于我
+              </a>
+            </li>
+        
+      </ul>
+
+      <footer class="footer">
+  <p>人气指数：<span id="busuanzi_value_site_uv" class="uvNum"></span></p>
+  <p>Alec Yin&#39;s World &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+
+    </div>
+  </div>
+</aside>
+
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container">
+        <h1 class="title">Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-11-22T08:16:12.000Z" itemprop="datePublished" class="page-time">
+  2016-11-22
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术类/">技术类</a></li></ul>
+
+            
+        </h5>
+    </div>
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于Turtle-Online"><span class="post-toc-number">1.</span> <span class="post-toc-text">关于Turtle Online</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#演示"><span class="post-toc-number">2.</span> <span class="post-toc-text">演示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#源码下载"><span class="post-toc-number">3.</span> <span class="post-toc-text">源码下载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#成功案例"><span class="post-toc-number">4.</span> <span class="post-toc-text">成功案例</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、使用方法"><span class="post-toc-number">5.</span> <span class="post-toc-text">一、使用方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、运行Turtle-online"><span class="post-toc-number">6.</span> <span class="post-toc-text">二、运行Turtle online</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、二次开发说明"><span class="post-toc-number">7.</span> <span class="post-toc-text">三、二次开发说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、项目架构说明"><span class="post-toc-number">8.</span> <span class="post-toc-text">四、项目架构说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、Turtle-Online框架运行图"><span class="post-toc-number">9.</span> <span class="post-toc-text">五、Turtle Online框架运行图</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#打赏支持"><span class="post-toc-number">10.</span> <span class="post-toc-text">打赏支持</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="it-Turtle-Online-info" 
+  class="post-article article-type-it" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发</h1>
+        <div class="post-meta">
+            <time datetime="2016-11-22T08:16:12.000Z" itemprop="datePublished" class="post-time">
+  2016-11-22
+</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/技术类/">技术类</a></li></ul>
+
+
+
+            <span id="busuanzi_container_page_pv" class="post-time">
+              阅读(<span id="busuanzi_value_page_pv"></span>)
+            </span>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="关于Turtle-Online"><a href="#关于Turtle-Online" class="headerlink" title="关于Turtle Online"></a>关于Turtle Online</h1><p>Turtle online 是Turtle框架的PC前端架构，包括组件和API两大部分，可以快速的搭建PC前端开发环境。<br>组件包括日历、分页、图片轮播/图片浏览、各类提示弹框/自定义弹层、气泡提示、图标icon、表单等。<br>API包括常用JS方法封装（cookie操作、ajax封装、日期处理、浏览器判断、当前位置获取页面跳转、其他常用方法等）、基于Backbone.View/Require.text.js的框架、前端模板。<br><strong>重要说明：Turtle online组件部分使用了第三方js库layerUI、poshytip。</strong></p>
+<h1 id="演示"><a href="#演示" class="headerlink" title="演示"></a>演示</h1><p><a href="http://yinluhui.oschina.io/turtle-online/code/views/index.html" title="点击开启精彩时刻" target="_blank" rel="external">Turtle Online演示</a></p>
+<h1 id="源码下载"><a href="#源码下载" class="headerlink" title="源码下载"></a>源码下载</h1><p><a href="http://git.oschina.net/yinluhui/turtle-online" title="点击开启精彩时刻" target="_blank" rel="external">Turtle Online演示</a></p>
+<h1 id="成功案例"><a href="#成功案例" class="headerlink" title="成功案例"></a>成功案例</h1><p><a href="http://www.800vk.com" title="电商任务派单平台" target="_blank" rel="external"><img src="http://oh16enj0m.bkt.clouddn.com/800vk.png" alt="800vk"></a></p>
+<h1 id="一、使用方法"><a href="#一、使用方法" class="headerlink" title="一、使用方法"></a>一、使用方法</h1><ol>
+<li>把build目录放到你项目中；</li>
+<li>在页面中引入Turtle.min.css和../build/Turtle.min.js；</li>
+<li>然后就可以在你的js中使用了，实例如下：</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'cPageView'</span>,<span class="string">'text!views/temple/temptest.html'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">PageView,temptest</span>) </span>&#123;</div><div class="line"><span class="keyword">var</span> View = PageView.extend(&#123;</div><div class="line">    <span class="attr">events</span>:&#123;</div><div class="line">        <span class="string">'click #cpageviewTest1'</span>:<span class="string">'clicktest1'</span>,</div><div class="line">        <span class="string">'click #templateA'</span>:<span class="string">'clicktest2'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">initialize</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'initialize'</span>);</div><div class="line">        <span class="keyword">this</span>.$el.find(<span class="string">'#cpageviewTest3'</span>).html(<span class="string">'默认值被改变'</span>);</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'initpage'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'initpage'</span>);</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.trigger(<span class="string">'initpage'</span>);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">clicktest1</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.$el.find(<span class="string">'#cpageviewTest2'</span>).html(<span class="string">'赋值成功！'</span>+<span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">clicktest2</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="string">'#templateTest'</span>).html(_.template(temptest)(&#123;<span class="attr">name</span>:<span class="string">'Alec yin'</span>&#125;));</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">return</span> <span class="keyword">new</span> View();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
+<li>API的使用，全部都是在Turtle/turtle对象中，直接【Turtle./turtle.】就可以了。<br>以上四步你就可以使用Turtle online中的方法了，如果你没有使用requireJs的话，API和组件也是可以直接使用的。</li>
+</ol>
+<h1 id="二、运行Turtle-online"><a href="#二、运行Turtle-online" class="headerlink" title="二、运行Turtle online"></a>二、运行Turtle online</h1><ol>
+<li>下载Turtle online项目，直接点击index.html即可查看。<br>（此时有js报错，因为使用了require.js，需要提供项目路径，不影响查看非cPageView实例以外的实例。）</li>
+</ol>
+<p>如果你要看cPageView的实例代码，请继续操作：</p>
+<ol>
+<li>把turtle online代码部署到服务器上；</li>
+<li>修改index.html中的代码【baseUrl: “<a href="http://localhost/TurtleOnline&quot;,】改成你的部署路径；" target="_blank" rel="external">http://localhost/TurtleOnline&quot;,】改成你的部署路径；</a></li>
+<li>再次运行index.html即可。</li>
+</ol>
+<h1 id="三、二次开发说明"><a href="#三、二次开发说明" class="headerlink" title="三、二次开发说明"></a>三、二次开发说明</h1><p>如果现有的Turtle online无法满足你的需求，你可以在现有代码的基础上定制型开发（注意：请勿提交至代码库，仅自己使用，谢谢！）。<br>开发步骤：</p>
+<ol>
+<li>修改代码；</li>
+<li>如果新增或者删除了文件，需要同步修改gulp配置文件gulpfile.js；</li>
+<li>安装node_modules依赖包；</li>
+<li>执行gulp build命令，合并压缩项目至build目录。</li>
+<li>把build目录下文件拷贝你项目中就可以直接使用了。</li>
+</ol>
+<h1 id="四、项目架构说明"><a href="#四、项目架构说明" class="headerlink" title="四、项目架构说明"></a>四、项目架构说明</h1><p><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-0.png" alt="项目架构说明" title="项目架构说明"></p>
+<h1 id="五、Turtle-Online框架运行图"><a href="#五、Turtle-Online框架运行图" class="headerlink" title="五、Turtle Online框架运行图"></a>五、Turtle Online框架运行图</h1><p><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-1.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-2.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-3.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-4.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-5.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-6.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-7.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-8.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-9.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-10.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-11.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-12.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-13.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"><br><img src="http://oh16enj0m.bkt.clouddn.com/turtleOnline-14.png" alt="Turtle Online框架运行图" title="Turtle Online框架运行图"></p>
+<h1 id="打赏支持"><a href="#打赏支持" class="headerlink" title="打赏支持"></a>打赏支持</h1><p><img src="http://oh16enj0m.bkt.clouddn.com/zfb.png" alt="支付宝" title="支付宝"><img src="http://oh16enj0m.bkt.clouddn.com/wx.png" alt="微信" title="微信"></p>
+
+        </div>
+        
+        <blockquote class="post-copyright">
+    <div class="content">
+        这里写留言或版权声明：<a href="/2016/11/22/Turtle-Online-info/" target="_blank" rel="external">http://lhyin.com/2016/11/22/Turtle-Online-info/</a>
+    </div>
+    <footer>
+        <a href="http://lhyin.com">
+            <img src="/img/author.jpg" alt="殷路辉(Alec)">
+            殷路辉(Alec)
+        </a>
+    </footer>
+</blockquote>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Turtle框架/">Turtle框架</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/22/Turtle-Online-info/&title=《Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/22/Turtle-Online-info/&title=《Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/22/Turtle-Online-info/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发》 — Alec Yin's World&url=http://lhyin.com/2016/11/22/Turtle-Online-info/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/22/Turtle-Online-info/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>   
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/11/22/markdown-basic/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Markdown基本语法</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+    
+<div class="duoshuo" id="comments">
+	<div class="ds-thread" data-thread-key="Turtle-Online-info" data-title="Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发" data-url="http://lhyin.com/2016/11/22/Turtle-Online-info/"></div>
+</div>
+<script src="/js/embed.min.js?v=1.2"></script>
+<script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
+<script>
+var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
+</script>
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+  </main>
+  <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
+
+
+
+<div class="global-share" id="globalShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/22/Turtle-Online-info/&title=《Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/22/Turtle-Online-info/&title=《Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/22/Turtle-Online-info/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Turtle Online：致力于打造超接地气的PC前端架构，组件+API，快速搭建前端开发》 — Alec Yin's World&url=http://lhyin.com/2016/11/22/Turtle-Online-info/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/22/Turtle-Online-info/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2016/11/22/Turtle-Online-info/" alt="微信分享二维码"/>
+</div>
+
+
+
+
+  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script src="/js/main.min.js?v=1.2"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.2"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

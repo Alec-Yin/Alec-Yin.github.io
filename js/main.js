@@ -240,10 +240,22 @@
         }
     };
 
+        // 自定义方法
+    var Alec = {
+        // 处理图片超链接中，图片中间有一条a标签的虚线
+        pageDone:function(){
+            var els = $$('.post-content p a>img, .post-content li a>img');
+            forEach.call(els, function(el) {
+                el.parentNode.style.cssText='border:none';
+            });
+        }
+    };
+
     w.addEventListener('load', function() {
         Blog.fixNavMinH();
         Blog.waterfall();
         loading.classList.remove('active');
+        Alec.pageDone();
     });
 
     w.addEventListener('resize', function() {
