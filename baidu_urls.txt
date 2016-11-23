@@ -1,3 +1,3 @@
-http://www.lhyin.com/2016/11/23/react-basic/
-http://www.lhyin.com/2016/11/22/shuomuye/
-http://www.lhyin.com/2016/11/22/sushi/
+http://lhyin.com/2016/11/23/react-basic/
+http://lhyin.com/2016/11/22/shuomuye/
+http://lhyin.com/2016/11/22/sushi/
