@@ -78,7 +78,7 @@
             <li class="waves-block waves-effect">
               <a href="/archives"  >
                 <i class="icon icon-lg icon-clock-o"></i>
-                时间轴
+                时间归档
               </a>
             </li>
         
@@ -135,6 +135,13 @@
               <a href="/about"  >
                 <i class="icon icon-lg icon-male"></i>
                 关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-link"></i>
+                友情链接
               </a>
             </li>
         
@@ -202,7 +209,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#架构创作初衷"><span class="post-toc-number">1.</span> <span class="post-toc-text">架构创作初衷</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Turtle-Online-应运而生"><span class="post-toc-number">2.</span> <span class="post-toc-text">Turtle Online 应运而生</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#演示"><span class="post-toc-number">3.</span> <span class="post-toc-text">演示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#源码下载"><span class="post-toc-number">4.</span> <span class="post-toc-text">源码下载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#成功案例"><span class="post-toc-number">5.</span> <span class="post-toc-text">成功案例</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、使用方法"><span class="post-toc-number">6.</span> <span class="post-toc-text">一、使用方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、运行Turtle-online"><span class="post-toc-number">7.</span> <span class="post-toc-text">二、运行Turtle online</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、二次开发说明"><span class="post-toc-number">8.</span> <span class="post-toc-text">三、二次开发说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、项目架构说明"><span class="post-toc-number">9.</span> <span class="post-toc-text">四、项目架构说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、Turtle-Online框架运行图"><span class="post-toc-number">10.</span> <span class="post-toc-text">五、Turtle Online框架运行图</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#依赖的第三方库"><span class="post-toc-number">11.</span> <span class="post-toc-text">依赖的第三方库</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#架构创作初衷"><span class="post-toc-text">架构创作初衷</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Turtle-Online-应运而生"><span class="post-toc-text">Turtle Online 应运而生</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#演示"><span class="post-toc-text">演示</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#源码下载"><span class="post-toc-text">源码下载</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#成功案例"><span class="post-toc-text">成功案例</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#一、使用方法"><span class="post-toc-text">一、使用方法</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#二、运行Turtle-online"><span class="post-toc-text">二、运行Turtle online</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#三、二次开发说明"><span class="post-toc-text">三、二次开发说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#四、项目架构说明"><span class="post-toc-text">四、项目架构说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#五、Turtle-Online框架运行图"><span class="post-toc-text">五、Turtle Online框架运行图</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#依赖的第三方库"><span class="post-toc-text">依赖的第三方库</span></a></li></ol>
         </nav>
     </aside>
     
@@ -246,7 +253,7 @@
 <li>在页面中引入Turtle.min.css和../build/Turtle.min.js；</li>
 <li>然后就可以在你的js中使用了，实例如下：</li>
 </ol>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">define([<span class="string">'cPageView'</span>,<span class="string">'text!views/temple/temptest.html'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">PageView,temptest</span>) </span>&#123;</div><div class="line"><span class="keyword">var</span> View = PageView.extend(&#123;</div><div class="line">    <span class="attr">events</span>:&#123;</div><div class="line">        <span class="string">'click #cpageviewTest1'</span>:<span class="string">'clicktest1'</span>,</div><div class="line">        <span class="string">'click #templateA'</span>:<span class="string">'clicktest2'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">initialize</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'initialize'</span>);</div><div class="line">        <span class="keyword">this</span>.$el.find(<span class="string">'#cpageviewTest3'</span>).html(<span class="string">'默认值被改变'</span>);</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'initpage'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'initpage'</span>);</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.trigger(<span class="string">'initpage'</span>);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">clicktest1</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.$el.find(<span class="string">'#cpageviewTest2'</span>).html(<span class="string">'赋值成功！'</span>+<span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">clicktest2</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="string">'#templateTest'</span>).html(_.template(temptest)(&#123;<span class="attr">name</span>:<span class="string">'Alec yin'</span>&#125;));</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">return</span> <span class="keyword">new</span> View();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">define([<span class="string">'cPageView'</span>,<span class="string">'text!views/temple/temptest.html'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">PageView,temptest</span>) </span>&#123;</div><div class="line"><span class="keyword">var</span> View = PageView.extend(&#123;</div><div class="line">    <span class="attr">events</span>:&#123;</div><div class="line">        <span class="string">'click #cpageviewTest1'</span>:<span class="string">'clicktest1'</span>,</div><div class="line">        <span class="string">'click #templateA'</span>:<span class="string">'clicktest2'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">initialize</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'initialize'</span>);</div><div class="line">        <span class="keyword">this</span>.$el.find(<span class="string">'#cpageviewTest3'</span>).html(<span class="string">'默认值被改变'</span>);</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'initpage'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'initpage'</span>);</div><div class="line">        &#125;);</div><div class="line">        <span class="keyword">this</span>.trigger(<span class="string">'initpage'</span>);</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">clicktest1</span>:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">        <span class="keyword">this</span>.$el.find(<span class="string">'#cpageviewTest2'</span>).html(<span class="string">'赋值成功！'</span>+<span class="keyword">new</span> <span class="built_in">Date</span>())</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">clicktest2</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        $(<span class="string">'#templateTest'</span>).html(_.template(temptest)(&#123;<span class="attr">name</span>:<span class="string">'Alec yin'</span>&#125;));</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"><span class="keyword">return</span> <span class="keyword">new</span> View();</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <ol>
 <li>API的使用，全部都是在Turtle/turtle对象中，直接【Turtle./turtle.】就可以了。<br>以上四步你就可以使用Turtle online中的方法了，如果你没有使用requireJs的话，API和组件也是可以直接使用的。</li>
 </ol>
@@ -317,7 +324,7 @@
         
         <blockquote class="post-copyright">
     <div class="content">
-        这里写留言或版权声明：<a href="/2016/11/22/Turtle-Online-info/" target="_blank" rel="external">http://lhyin.com/2016/11/22/Turtle-Online-info/</a>
+        险觅天应闷，狂搜海亦枯。不同文赋易，为著之者乎：<a href="/2016/11/22/Turtle-Online-info/" target="_blank" rel="external">http://lhyin.com/2016/11/22/Turtle-Online-info/</a>
     </div>
     <footer>
         <a href="http://lhyin.com">
@@ -433,7 +440,7 @@ var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        妆罢低声问夫婿，画眉深浅入时无？
         <i class="icon icon-quote-right"></i>
     </h3>
     <ul class="reward-items">

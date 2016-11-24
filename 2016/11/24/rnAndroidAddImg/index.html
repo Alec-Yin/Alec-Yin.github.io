@@ -14,7 +14,7 @@
   
   
   <meta name="keywords" content="ReactNative">
-  <meta name="description" content="将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：1&amp;lt;Image source=&amp;#123;require(&apos;./UePbdph.png&apos;)&amp;#125; style=&amp;#123;styles.thumbnail&amp;#125;/&amp;gt;
+  <meta name="description" content="将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：&amp;lt;Image source=&amp;#123;require(&apos;./UePbdph.png&apos;)&amp;#125; style=&amp;#123;styles.thumbnail&amp;#125;/&amp;gt;
 环境:
 react版本：15.0.2
 react-nativeb版本：0.26.2">
@@ -22,14 +22,14 @@ react-nativeb版本：0.26.2">
 <meta property="og:title" content="RN Android增加本地图片">
 <meta property="og:url" content="http://lhyin.com/2016/11/24/rnAndroidAddImg/index.html">
 <meta property="og:site_name" content="Alec Yin's World">
-<meta property="og:description" content="将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：1&amp;lt;Image source=&amp;#123;require(&apos;./UePbdph.png&apos;)&amp;#125; style=&amp;#123;styles.thumbnail&amp;#125;/&amp;gt;
+<meta property="og:description" content="将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：&amp;lt;Image source=&amp;#123;require(&apos;./UePbdph.png&apos;)&amp;#125; style=&amp;#123;styles.thumbnail&amp;#125;/&amp;gt;
 环境:
 react版本：15.0.2
 react-nativeb版本：0.26.2">
 <meta property="og:updated_time" content="2016-11-24T05:29:23.037Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RN Android增加本地图片">
-<meta name="twitter:description" content="将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：1&amp;lt;Image source=&amp;#123;require(&apos;./UePbdph.png&apos;)&amp;#125; style=&amp;#123;styles.thumbnail&amp;#125;/&amp;gt;
+<meta name="twitter:description" content="将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：&amp;lt;Image source=&amp;#123;require(&apos;./UePbdph.png&apos;)&amp;#125; style=&amp;#123;styles.thumbnail&amp;#125;/&amp;gt;
 环境:
 react版本：15.0.2
 react-nativeb版本：0.26.2">
@@ -70,7 +70,7 @@ react-nativeb版本：0.26.2">
             <li class="waves-block waves-effect">
               <a href="/archives"  >
                 <i class="icon icon-lg icon-clock-o"></i>
-                时间轴
+                时间归档
               </a>
             </li>
         
@@ -127,6 +127,13 @@ react-nativeb版本：0.26.2">
               <a href="/about"  >
                 <i class="icon icon-lg icon-male"></i>
                 关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-link"></i>
+                友情链接
               </a>
             </li>
         
@@ -209,17 +216,17 @@ react-nativeb版本：0.26.2">
             </span>
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">UePbdph.png</span>')&#125; <span class="attr">style</span>=<span class="string">&#123;styles.thumbnail&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
+            <p>将图片文件 UePbdph.png 放入与index.android.js的同目录中，在index.android.js中引入：<br><figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">UePbdph.png</span>')&#125; <span class="attr">style</span>=<span class="string">&#123;styles.thumbnail&#125;/</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>环境:</p>
 <pre><code>react版本：15.0.2
 react-nativeb版本：0.26.2
 react-native-cli版本：0.2.0
-</code></pre><p>打开<strong>\node_modules\react-native\Libraries\Image\AssetSourceResolver.js</strong>文件,将原文：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScaledAssetPath</span>(<span class="params">asset</span>): <span class="title">string</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> scale = AssetSourceResolver.pickScale(asset.scales, PixelRatio.get());</div><div class="line">  <span class="keyword">var</span> scaleSuffix = scale === <span class="number">1</span> ? <span class="string">''</span> : <span class="string">'@'</span> + scale + <span class="string">'x'</span>;</div><div class="line">  <span class="keyword">var</span> assetDir = assetPathUtils.getBasePath(asset);</div><div class="line">  <span class="keyword">return</span> assetDir + <span class="string">'/'</span> + asset.name + scaleSuffix + <span class="string">'.'</span> + asset.type;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>改为：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScaledAssetPath</span>(<span class="params">asset</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> scale = AssetSourceResolver.pickScale(asset.scales, PixelRatio.get());</div><div class="line">  <span class="keyword">var</span> scaleSuffix = scale === <span class="number">1</span> ? <span class="string">''</span> : <span class="string">'@'</span> + scale + <span class="string">'x'</span>;</div><div class="line">  <span class="keyword">var</span> assetDir = assetPathUtils.getBasePath(asset);</div><div class="line">  <span class="comment">//return assetDir + '/' + asset.name + scaleSuffix + '.' + asset.type;</span></div><div class="line">   <span class="keyword">var</span> imagePath = assetDir + <span class="string">'/'</span> + asset.name + scaleSuffix + <span class="string">'.'</span> + asset.type;</div><div class="line">  <span class="keyword">if</span> (imagePath[<span class="number">0</span>] == <span class="string">"/"</span> || imagePath[<span class="number">0</span>] == <span class="string">"\\"</span>) &#123;</div><div class="line">      imagePath = imagePath.substr(<span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> imagePath;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</code></pre><p>打开<strong>\node_modules\react-native\Libraries\Image\AssetSourceResolver.js</strong>文件,将原文：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScaledAssetPath</span>(<span class="params">asset</span>): <span class="title">string</span> </span>&#123;</div><div class="line">  <span class="keyword">var</span> scale = AssetSourceResolver.pickScale(asset.scales, PixelRatio.get());</div><div class="line">  <span class="keyword">var</span> scaleSuffix = scale === <span class="number">1</span> ? <span class="string">''</span> : <span class="string">'@'</span> + scale + <span class="string">'x'</span>;</div><div class="line">  <span class="keyword">var</span> assetDir = assetPathUtils.getBasePath(asset);</div><div class="line">  <span class="keyword">return</span> assetDir + <span class="string">'/'</span> + asset.name + scaleSuffix + <span class="string">'.'</span> + asset.type;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>改为：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getScaledAssetPath</span>(<span class="params">asset</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> scale = AssetSourceResolver.pickScale(asset.scales, PixelRatio.get());</div><div class="line">  <span class="keyword">var</span> scaleSuffix = scale === <span class="number">1</span> ? <span class="string">''</span> : <span class="string">'@'</span> + scale + <span class="string">'x'</span>;</div><div class="line">  <span class="keyword">var</span> assetDir = assetPathUtils.getBasePath(asset);</div><div class="line">  <span class="comment">//return assetDir + '/' + asset.name + scaleSuffix + '.' + asset.type;</span></div><div class="line">   <span class="keyword">var</span> imagePath = assetDir + <span class="string">'/'</span> + asset.name + scaleSuffix + <span class="string">'.'</span> + asset.type;</div><div class="line">  <span class="keyword">if</span> (imagePath[<span class="number">0</span>] == <span class="string">"/"</span> || imagePath[<span class="number">0</span>] == <span class="string">"\\"</span>) &#123;</div><div class="line">      imagePath = imagePath.substr(<span class="number">1</span>);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> imagePath;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>遗留问题： </p>
 <ol>
 <li><p>如果把图片放入文件夹中，比如在根目录新建一个img文件夹，把图片放进去，引入方式改为：　</p>
- <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">img</span>/<span class="attr">UePbdph.png</span>')&#125; <span class="attr">style</span>=<span class="string">&#123;styles.thumbnail&#125;/</span>&gt;</span></div></pre></td></tr></table></figure>
+ <figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Image</span> <span class="attr">source</span>=<span class="string">&#123;require(</span>'<span class="attr">.</span>/<span class="attr">img</span>/<span class="attr">UePbdph.png</span>')&#125; <span class="attr">style</span>=<span class="string">&#123;styles.thumbnail&#125;/</span>&gt;</span></div></pre></td></tr></table></figure>
 <p> 会报错，不知道为什么？</p>
 </li>
 <li><p>如果放在根目录中，打包成app，应该放在哪里呢？<br> 以上问题，还需继续研究回答，也烦请知道的同志们帮忙回答，tks！</p>
@@ -230,7 +237,7 @@ react-native-cli版本：0.2.0
         
         <blockquote class="post-copyright">
     <div class="content">
-        这里写留言或版权声明：<a href="/2016/11/24/rnAndroidAddImg/" target="_blank" rel="external">http://lhyin.com/2016/11/24/rnAndroidAddImg/</a>
+        险觅天应闷，狂搜海亦枯。不同文赋易，为著之者乎：<a href="/2016/11/24/rnAndroidAddImg/" target="_blank" rel="external">http://lhyin.com/2016/11/24/rnAndroidAddImg/</a>
     </div>
     <footer>
         <a href="http://lhyin.com">
@@ -304,7 +311,14 @@ react-native-cli版本：0.2.0
     </div>   
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/11/24/mingju/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">妆罢低声问夫婿，画眉深浅入时无？</h4>
+      </a>
+    </div>
   
 
   
@@ -339,7 +353,7 @@ var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
         <i class="icon icon-quote-left"></i>
-        谢谢大爷~
+        妆罢低声问夫婿，画眉深浅入时无？
         <i class="icon icon-quote-right"></i>
     </h3>
     <ul class="reward-items">
