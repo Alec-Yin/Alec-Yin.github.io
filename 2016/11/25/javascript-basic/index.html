@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="google-site-verification" content="true">
+  
+  
+  
+  <title>温故而知新：JavaScript的16个基础要点 | Alec Yin&#39;s World | 静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="JavaScript">
+  <meta name="description" content="做前端开发已有几年，虽然当初系统性的学习过，但时间长了，对js系统的认识早已被工作中零零散散的知识点打碎，现在，有必要把基础和经验系统性的梳理一遍了。别的资料不看，就看官方文档，虽然简单、笼统，但结合工作经验中对js的深层了解，特别整理出以下的16个基础要点，一则方便记忆，二则复习/面试所需。
+1.null 和 undefined在 JScript 中 null 和 undefined 的主要区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="温故而知新：JavaScript的16个基础要点">
+<meta property="og:url" content="http://lhyin.com/2016/11/25/javascript-basic/index.html">
+<meta property="og:site_name" content="Alec Yin's World">
+<meta property="og:description" content="做前端开发已有几年，虽然当初系统性的学习过，但时间长了，对js系统的认识早已被工作中零零散散的知识点打碎，现在，有必要把基础和经验系统性的梳理一遍了。别的资料不看，就看官方文档，虽然简单、笼统，但结合工作经验中对js的深层了解，特别整理出以下的16个基础要点，一则方便记忆，二则复习/面试所需。
+1.null 和 undefined在 JScript 中 null 和 undefined 的主要区别">
+<meta property="og:updated_time" content="2016-11-25T09:17:10.754Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="温故而知新：JavaScript的16个基础要点">
+<meta name="twitter:description" content="做前端开发已有几年，虽然当初系统性的学习过，但时间长了，对js系统的认识早已被工作中零零散散的知识点打碎，现在，有必要把基础和经验系统性的梳理一遍了。别的资料不看，就看官方文档，虽然简单、笼统，但结合工作经验中对js的深层了解，特别整理出以下的16个基础要点，一则方便记忆，二则复习/面试所需。
+1.null 和 undefined在 JScript 中 null 和 undefined 的主要区别">
+  
+  <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1.2">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-angle-double-left"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/author.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">殷路辉(Alec)</h5>
+          <a href="mailto:1020362662@qq.com" title="1020362662@qq.com" class="mail">1020362662@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-clock-o"></i>
+                时间归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-file-code-o"></i>
+                技术文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-heart"></i>
+                诗文收藏
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/yinluhui" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                开源中国
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Alec-Yin" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.cnblogs.com/yinluhui0229" target="_blank" >
+                <i class="icon icon-lg icon-rss-square"></i>
+                博客园
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-online/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-tv"></i>
+                Turtle Online
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-mobile/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-mobile"></i>
+                Turtle Mobile
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-male"></i>
+                关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-link"></i>
+                友情链接
+              </a>
+            </li>
+        
+      </ul>
+
+      <footer class="footer">
+  <p>人气指数：<span id="busuanzi_value_site_uv" class="uvNum">ing...</span></p>
+  <p>Alec Yin&#39;s World &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+
+    </div>
+  </div>
+</aside>
+
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">温故而知新：JavaScript的16个基础要点</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container">
+        <h1 class="title">温故而知新：JavaScript的16个基础要点</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-11-25T08:11:34.000Z" itemprop="datePublished" class="page-time">
+  2016-11-25
+</time>
+
+
+            
+        </h5>
+    </div>
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-null-和-undefined"><span class="post-toc-text">1.null 和 undefined</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-变量声明"><span class="post-toc-text">2.变量声明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-数据类型之-3-2-2"><span class="post-toc-text">3.数据类型之 3 2 2</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-true和false"><span class="post-toc-text">4.true和false</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-undefined的判断"><span class="post-toc-text">5.undefined的判断</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-运算符"><span class="post-toc-text">6.运算符</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#instanceof-运算符"><span class="post-toc-text">instanceof 运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#in-运算符"><span class="post-toc-text">in 运算符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#，"><span class="post-toc-text">==，!=</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#、-恒等（严格相等）"><span class="post-toc-text">===、!== 恒等（严格相等）</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-语句控制"><span class="post-toc-text">7.语句控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选择结构。"><span class="post-toc-text">选择结构。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#循环结构。"><span class="post-toc-text">循环结构。</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-expando属性：对象可扩展属性"><span class="post-toc-text">8.expando属性：对象可扩展属性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-prototype-属性"><span class="post-toc-text">9.prototype 属性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-JS内置对象"><span class="post-toc-text">10.JS内置对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#11-变量范围"><span class="post-toc-text">11.变量范围</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#12-按值和按引用的比较"><span class="post-toc-text">12.按值和按引用的比较</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#13-传递参数给函数"><span class="post-toc-text">13.传递参数给函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#14-在浏览器中显示信息"><span class="post-toc-text">14.在浏览器中显示信息</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#15-call和apply"><span class="post-toc-text">15.call和apply</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#16-比较重要的方法"><span class="post-toc-text">16.比较重要的方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-compile"><span class="post-toc-text">(1). compile()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-encodeURI-、decodeURI"><span class="post-toc-text">(2). encodeURI()、decodeURI()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-encodeURIComponent-、decodeURIComponent"><span class="post-toc-text">(3). encodeURIComponent()、decodeURIComponent()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-escape-、unescape"><span class="post-toc-text">(4). escape()、unescape()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#5-eval"><span class="post-toc-text">(5). eval()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#6-exec-、match"><span class="post-toc-text">(6). exec()、match()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#7-Date对象"><span class="post-toc-text">(7). Date对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-获取时间"><span class="post-toc-text">1). 获取时间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-设置时间"><span class="post-toc-text">2). 设置时间</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-Date-parse"><span class="post-toc-text">3). Date.parse()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#8-indexOf-、lastIndexOf"><span class="post-toc-text">(8). indexOf()、lastIndexOf()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#9-isFinite"><span class="post-toc-text">(9). isFinite()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#10-isNaN"><span class="post-toc-text">(10). isNaN()</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#11-Array-对象"><span class="post-toc-text">(11). Array 对象</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-增加"><span class="post-toc-text">1). 增加</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-删除"><span class="post-toc-text">2). 删除</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-修改"><span class="post-toc-text">3). 修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-查询"><span class="post-toc-text">4). 查询</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-其他操作"><span class="post-toc-text">5). 其他操作</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="it-javascript-basic" 
+  class="post-article article-type-it" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">温故而知新：JavaScript的16个基础要点</h1>
+        <div class="post-meta">
+            <time datetime="2016-11-25T08:11:34.000Z" itemprop="datePublished" class="post-time">
+  2016-11-25
+</time>
+
+            
+
+
+            <span id="busuanzi_container_page_pv" class="post-time">
+              阅读(<span id="busuanzi_value_page_pv">ing...</span>)
+            </span>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>做前端开发已有几年，虽然当初系统性的学习过，但时间长了，对js系统的认识早已被工作中零零散散的知识点打碎，现在，有必要把基础和经验系统性的梳理一遍了。别的资料不看，就看官方文档，虽然简单、笼统，但结合工作经验中对js的深层了解，特别整理出以下的16个基础要点，一则方便记忆，二则复习/面试所需。</p>
+<h1 id="1-null-和-undefined"><a href="#1-null-和-undefined" class="headerlink" title="1.null 和 undefined"></a>1.null 和 undefined</h1><p>在 JScript 中 null 和 undefined 的主要区别是 null 的操作象数字 0，而 undefined 的操作象特殊值NaN （不是一个数字）。对 null 值和 undefined 值作比较总是相等的。null和undefined拼接string字符时相当于’null’和’undefined’字符串拼接。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="literal">null</span>+<span class="number">2</span>=<span class="number">2</span>;</div><div class="line"><span class="literal">null</span>*<span class="number">4</span>=<span class="number">0</span>;    </div><div class="line"><span class="literal">undefined</span>+<span class="number">2</span>=<span class="literal">NaN</span>;</div><div class="line"><span class="literal">null</span>==<span class="literal">undefined</span> <span class="comment">//返回true。</span></div><div class="line"><span class="literal">null</span>+<span class="string">'qqqq'</span>=nullqqqq;</div><div class="line"><span class="literal">undefined</span>+<span class="string">'www'</span>=undefinedwww</div></pre></td></tr></table></figure></p>
+<p>说明：null只有参与运算时可以当做0，但是null==0，返回false</p>
+<h1 id="2-变量声明"><a href="#2-变量声明" class="headerlink" title="2.变量声明"></a>2.变量声明</h1><p>JScript 变量使用 var 声明，运算时自动转换类型，规则如下：<br>数  值 + 字符串    //将数值强制转换为字符串。<br>布尔值 + 字符串    //将布尔值强制转换为字符串。<br>数  值 + 布尔值    //将布尔值强制转换为数值。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="number">200</span>+<span class="string">'Hello'</span>=<span class="string">'200Hello'</span></div><div class="line"><span class="literal">true</span>+<span class="string">'Hello'</span>=<span class="string">'trueHello'</span></div><div class="line"><span class="literal">true</span>+<span class="number">5</span>=<span class="number">6</span>    <span class="comment">//true转化为1</span></div><div class="line"><span class="literal">false</span>*<span class="number">5</span>=<span class="number">0</span>    <span class="comment">//false转化为0</span></div></pre></td></tr></table></figure></p>
+<h1 id="3-数据类型之-3-2-2"><a href="#3-数据类型之-3-2-2" class="headerlink" title="3.数据类型之 3 2 2"></a>3.数据类型之 3 2 2</h1><p>Jscript 有3种主要数据类型、2种复合数据类型和2种特殊数据类型。<br>主要（基本）数据类型是：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">字符串    <span class="comment">//string</span></div><div class="line">数值     <span class="comment">//number 在Jscript中整数和浮点值没有差别（JScript 内部将所有的数值表示为浮点值）。</span></div><div class="line">布尔     <span class="comment">//boolean</span></div></pre></td></tr></table></figure></p>
+<p>复合（引用）数据类型是：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">对象 </div><div class="line">数组</div></pre></td></tr></table></figure></p>
+<p>特殊数据类型是：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">Null     <span class="comment">//typeof null=object,而非类型 null，这点潜在的混淆是为了向下兼容(nul表示“无值”或“无对象”)</span></div><div class="line">Undefined     <span class="comment">// typeof Undefined=Undefined，对象属性不存在， 或者声明了变量但从未赋值。</span></div></pre></td></tr></table></figure></p>
+<p>说明：typeof 返回值有六种可能： “number,” “string,” “boolean,” “object,” “function,” 和 “undefined.”</p>
+<h1 id="4-true和false"><a href="#4-true和false" class="headerlink" title="4.true和false"></a>4.true和false</h1><p>任何值为0、null、未定义(undefined)或空字符串(‘’或””)的表达式被解释为 false。其他任意值的表达式解释为 true。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span>(x=y+z)    <span class="comment">//先把y+z赋值给x，然后判断x得知是否为0</span></div></pre></td></tr></table></figure></p>
+<h1 id="5-undefined的判断"><a href="#5-undefined的判断" class="headerlink" title="5.undefined的判断"></a>5.undefined的判断</h1><p>判断一个变量是否为undefined 的方式：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span>(x) == <span class="string">"undefined"</span>)</div></pre></td></tr></table></figure></p>
+<p>以下两种是错误的：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (x == <span class="literal">undefined</span>) </div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span>(x) == <span class="literal">undefined</span>)</div></pre></td></tr></table></figure></p>
+<h1 id="6-运算符"><a href="#6-运算符" class="headerlink" title="6.运算符"></a>6.运算符</h1><h2 id="instanceof-运算符"><a href="#instanceof-运算符" class="headerlink" title="instanceof 运算符"></a>instanceof 运算符</h2><p>返回一个 Boolean 值，指出对象是否是特定类的一个实例。<br>result = object instanceof class</p>
+<h2 id="in-运算符"><a href="#in-运算符" class="headerlink" title="in 运算符"></a>in 运算符</h2><p>测试对象中是否存在该属性。<br>result = property in object</p>
+<h2 id="，"><a href="#，" class="headerlink" title="==，!="></a>==，!=</h2><p>NaN 与包括其本身在内的任何值都不相等,即NaN!=NaN,如果判断是否为NaN，请使用Number.isNaN()方法。<br>null 与 null 和 undefined 相等。 null==undefined</p>
+<p><strong>注意：</strong><br>基本的字符串、数值和布尔值是按值比较的。如果它们的值相同，比较结果为相等。<br>对象（包括Array、Function、String、Number、Boolean、Error、Date以及 RegExp 对象）按引用比较。即使这些类型的两个变量具有相同的值，只有在它们正好为同一对象时比较结果才为 true。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> string1=<span class="string">"Hello"</span>;</div><div class="line"><span class="comment">// 具有相同值的两个 String 对象。</span></div><div class="line"><span class="keyword">var</span> StringObject1 = <span class="keyword">new</span> <span class="built_in">String</span>(string1);</div><div class="line"><span class="keyword">var</span> StringObject2 = <span class="keyword">new</span> <span class="built_in">String</span>(string1);</div><div class="line">StringObject1 == StringObject2 <span class="comment">//返回false。</span></div><div class="line">StringObject1.ValueOf() == StringObject2 <span class="comment">//返回True (ValueOf()返回指定对象的原始值)</span></div></pre></td></tr></table></figure></p>
+<h2 id="、-恒等（严格相等）"><a href="#、-恒等（严格相等）" class="headerlink" title="===、!== 恒等（严格相等）"></a>===、!== 恒等（严格相等）</h2><p>数值和类型都要相同</p>
+<h1 id="7-语句控制"><a href="#7-语句控制" class="headerlink" title="7.语句控制"></a>7.语句控制</h1><h2 id="选择结构。"><a href="#选择结构。" class="headerlink" title="选择结构。"></a>选择结构。</h2><ul>
+<li>单一选择结构（if） </li>
+<li>二路选择结构（if/else）</li>
+<li>内联三元运算符 ?: </li>
+<li>多路选择结构（switch）。 //使用break跳出</li>
+</ul>
+<h2 id="循环结构。"><a href="#循环结构。" class="headerlink" title="循环结构。"></a>循环结构。</h2><ul>
+<li>在循环的开头测试表达式（while）</li>
+<li>在循环的末尾测试表达式（do/while） </li>
+<li>对对象的每个属性都进行操作（for/in） </li>
+<li>由计数器控制的循环（for） </li>
+</ul>
+<p>如for…in 循环:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 遍历对象属性</span></div><div class="line"><span class="keyword">var</span> myObject = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">myObject.name = <span class="string">"James"</span>;</div><div class="line">myObject.age = <span class="string">"22"</span>;</div><div class="line">myObject.phone = <span class="string">"555 1234"</span>;<span class="comment">// 枚举（循环）对象的所有属性</span></div><div class="line"><span class="keyword">for</span> (prop <span class="keyword">in</span> myObject) &#123;</div><div class="line">	<span class="comment">//遍历myObject所有属性（注意一定要用prop遍历）</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 遍历键值对象</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ForInDemo</span>(<span class="params"></span>)</span>&#123;   </div><div class="line">	<span class="comment">// 创建某些变量。   </span></div><div class="line">	<span class="keyword">var</span> a, key, s = <span class="string">""</span>;   <span class="comment">// 初始化对象。</span></div><div class="line">	a = &#123;<span class="string">"a"</span> : <span class="string">"Athens"</span> , <span class="string">"b"</span> : <span class="string">"Belgrade"</span>, <span class="string">"c"</span> : <span class="string">"Cairo"</span>&#125;   <span class="comment">// 迭代属性。</span></div><div class="line">	<span class="keyword">for</span> (key <span class="keyword">in</span> a)   &#123;      </div><div class="line">		s += a[key] + <span class="string">";"</span>;   </div><div class="line">	&#125;   </div><div class="line">	<span class="keyword">return</span>(s);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>说明：js其他循环还有：for、while、do..while，使用break 和 continue 跳出和继续下一个 循环</p>
+<h1 id="8-expando属性：对象可扩展属性"><a href="#8-expando属性：对象可扩展属性" class="headerlink" title="8.expando属性：对象可扩展属性"></a>8.expando属性：对象可扩展属性</h1><p>expando不是一个关键字，而是expandable object 的缩写，即可扩展对象，js中所有对象都是扩展的，有下面两种情况：<br>第一：如果属性的名称符合js变量命名规范，可以直接用’.’<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">// 添加两个 expando 属性，'name' 和 'age'</span></div><div class="line">myObj.name = <span class="string">"Fred"</span>;</div><div class="line">myObj.age = <span class="number">42</span>;</div></pre></td></tr></table></figure></p>
+<p>第二：如果属性名称不是一个简单的标识符，或者在写脚本的时候不知道，可以在【方括号】中使用任意表达式来索引属性。在 Jscript 中所有 expando 属性的名称在被添加到对象之前被转换为字符串<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myObj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">myObj[<span class="string">"not a valid identifier"</span>] = <span class="string">"This is the property value"</span>;</div><div class="line">myObj[<span class="number">100</span>] = <span class="string">"100"</span>;</div></pre></td></tr></table></figure></p>
+<p>说明：数组也是对象，只不过它有一个其他对象不具有的length属性。数组可以通过expando属性实现多维数组（虽然js中数组不支持多维），如下：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</div><div class="line">myArray[<span class="number">0</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</div><div class="line">myArray[<span class="number">1</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</div><div class="line">myArray[<span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</div><div class="line">myArray[<span class="number">0</span>][<span class="number">0</span>]=<span class="string">'00'</span></div><div class="line">myArray[<span class="number">0</span>][<span class="number">1</span>]=<span class="string">'01'</span></div><div class="line">myArray[<span class="number">2</span>][<span class="number">2</span>]=<span class="string">'22'</span></div></pre></td></tr></table></figure></p>
+<p>另外，数组增加expando属性，length属性不会改变，如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> myArray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">3</span>);</div><div class="line">myArray[<span class="number">0</span>] = <span class="string">"Hello"</span>;</div><div class="line">myArray[<span class="number">1</span>] = <span class="number">42</span>;</div><div class="line">myArray[<span class="number">2</span>] = <span class="keyword">new</span> <span class="built_in">Date</span>(<span class="number">2000</span>, <span class="number">1</span>, <span class="number">1</span>);</div><div class="line"><span class="comment">//myArray.length=3</span></div><div class="line"></div><div class="line"><span class="comment">// 添加某些 expando 属性</span></div><div class="line">myArray.expando = <span class="string">"JScript!"</span>;</div><div class="line">myArray[<span class="string">"another Expando"</span>] = <span class="string">"Windows"</span>;</div><div class="line"><span class="comment">//myArray.length依然为3</span></div></pre></td></tr></table></figure></p>
+<h1 id="9-prototype-属性"><a href="#9-prototype-属性" class="headerlink" title="9.prototype 属性"></a>9.prototype 属性</h1><p>返回某个对象原型的引用，该属性可以为对象原型添加功能，添加成功后，改对象的所有实例都拥有该属性，包括那些已经生成的实例。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//person 含有两个参数的构造器</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">name, sex</span>)</span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.name = sex;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> nick=<span class="keyword">new</span> person(<span class="string">'nick'</span>,<span class="string">'boy'</span>)</div><div class="line"><span class="keyword">var</span> iwen=<span class="keyword">new</span> person(<span class="string">'iwen'</span>,<span class="string">'gril'</span>)</div><div class="line">iwen.hairstyle=<span class="string">'长头发'</span>;<span class="comment">//只有iwen才有 hairstyle 属性</span></div><div class="line">person.prototype.height=<span class="string">'170'</span>;<span class="comment">//nick 和 iwen 实例对象都会增加 height 属性</span></div></pre></td></tr></table></figure></p>
+<p>说明：prototype属性可以用于js继承的实现。</p>
+<h1 id="10-JS内置对象"><a href="#10-JS内置对象" class="headerlink" title="10.JS内置对象"></a>10.JS内置对象</h1><p>Jscript 提供了 11 个内部（或“内置”）对象。它们是Array、Boolean、Date、Function、Global、Math、Number、Object、RegExp、Error、String 对象。<br>Array 对象<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> theMonths = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">12</span>);</div><div class="line">theMonths[<span class="number">0</span>] = <span class="string">"Jan"</span>;</div><div class="line">theMonths[<span class="number">1</span>] = <span class="string">"Feb"</span>;</div><div class="line">theMonths[<span class="number">2</span>] = <span class="string">"Mar"</span>;</div><div class="line">theMonths[<span class="number">3</span>] = <span class="string">"Apr"</span>;</div><div class="line">theMonths[<span class="number">4</span>] = <span class="string">"May"</span>;</div><div class="line">theMonths[<span class="number">5</span>] = <span class="string">"Jun"</span>;</div><div class="line">theMonths[<span class="number">6</span>] = <span class="string">"Jul"</span>;</div><div class="line">theMonths[<span class="number">7</span>] = <span class="string">"Aug"</span>;</div><div class="line">theMonths[<span class="number">8</span>] = <span class="string">"Sep"</span>;</div><div class="line">theMonths[<span class="number">9</span>] = <span class="string">"Oct"</span>;</div><div class="line">theMonths[<span class="number">10</span>] = <span class="string">"Nov"</span>;</div><div class="line">theMonths[<span class="number">11</span>] = <span class="string">"Dec"</span>;</div></pre></td></tr></table></figure></p>
+<p>等价于<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> theMonths = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"Jan"</span>, <span class="string">"Feb"</span>, <span class="string">"Mar"</span>, <span class="string">"Apr"</span>, <span class="string">"May"</span>, <span class="string">"Jun"</span>, <span class="string">"Jul"</span>, <span class="string">"Aug"</span>, <span class="string">"Sep"</span>, <span class="string">"Oct"</span>, <span class="string">"Nov"</span>, <span class="string">"Dec"</span>);</div></pre></td></tr></table></figure></p>
+<p>说明：<br>  如果theMonths.length=2，则theMonths数组的后10个将被自动删掉，只保留前2个值。</p>
+<h1 id="11-变量范围"><a href="#11-变量范围" class="headerlink" title="11.变量范围"></a>11.变量范围</h1><p>一个局部变量的名称可以与某个全局变量的名称相同，但这是完全不同和独立的两个变量。因此，更改一个变量的值不会影响另一个变量的值。在声明局部变量的函数内，只有该局部变量有意义。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> alec=<span class="string">"全局变量"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeAlec</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> alec=<span class="string">"局部变量"</span>;</div><div class="line">	alec+=<span class="string">",哈哈"</span>;</div><div class="line">	alert(<span class="string">"函数内："</span>+alec)<span class="comment">//局部变量，哈哈</span></div><div class="line">&#125;</div><div class="line">changeAlec();</div><div class="line">alec+=<span class="string">"，吼吼"</span>;</div><div class="line">alert(<span class="string">"函数外："</span>+alec);<span class="comment">//全局变量，吼吼</span></div></pre></td></tr></table></figure></p>
+<h1 id="12-按值和按引用的比较"><a href="#12-按值和按引用的比较" class="headerlink" title="12.按值和按引用的比较"></a>12.按值和按引用的比较</h1><ul>
+<li>Numbers 和 Boolean 类型的值 (true 和 false) 是按值来复制、传递和比较的。</li>
+<li>对象、数组以及函数是按引用来复制、传递和比较的。</li>
+<li>字符串是按引用复制和传递的，但是是按值来比较的。请注意，假如有两个 String 对象（用 new String(“something”) 创建的），按引用比较它们，但是，如果其中一个或者两者都是字符串值的话，按值比较它们。</li>
+</ul>
+<p>说明：</p>
+<ul>
+<li>要想检查两个数组是否包含了相同的元素，不能直接比较数组对象，需要比较 toString() 方法的结果。</li>
+<li>鉴于 ASCII和 ANSI 字符集的构造方法，按序列顺序大写字母位于小写字母的前面(即 小写字母&gt;大写字母)。例如 “a”&gt;”A”、”c”&gt;”A”。如果想执行不区分大小写的匹配，可以对两个字符串调用 toUpperCase() 或 toLowerCase()。<br>如：<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> arr1 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>);</div><div class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>);</div><div class="line"><span class="keyword">if</span> (arr1 == arr2) &#123;</div><div class="line">	alert(<span class="string">'数组相同'</span>);<span class="comment">//不会执行</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">if</span> (arr1.toString() == arr2.toString()) &#123;</div><div class="line">	alert(<span class="string">'数组toString()相同'</span>)<span class="comment">//执行（arr1.toString()）</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> str1 = <span class="string">"aaa"</span>;</div><div class="line"><span class="keyword">var</span> str2 = <span class="string">"aaa"</span>;</div><div class="line"><span class="keyword">if</span> (str1 == str2) &#123;</div><div class="line">	alert(<span class="string">'字符相同'</span>)<span class="comment">//执行</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> strObj1 =<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"aaa"</span>);</div><div class="line"><span class="keyword">var</span> strObj2 = <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"aaa"</span>);</div><div class="line"><span class="keyword">if</span> (strObj1 == strObj2) &#123;</div><div class="line">	alert(<span class="string">'字符对象相同'</span>)<span class="comment">//不会执行</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="13-传递参数给函数"><a href="#13-传递参数给函数" class="headerlink" title="13.传递参数给函数"></a>13.传递参数给函数</h1><p>按值传递一个参数给函数就是制作该参数的一个独立复本，即一个只存在于该函数内的复本。<br>按引用传递对象和数组时，如果直接在函数中用新值覆盖原先的值，在函数外并不反映新值。只有在对象的属性或者数组的元素改变时，在函数外才可以看出。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 本代码段破坏（覆盖）其参数，所以调用代码中反映不出变化。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Clobber</span>(<span class="params">param</span>) </span>&#123;           </div><div class="line">param = <span class="keyword">new</span> <span class="built_in">Object</span>();<span class="comment">// 破坏参数；在调用代码中看不到。 </span></div><div class="line">param.message = <span class="string">"This will not work"</span>;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 本段代码改变参数的属性，在调用代码中可看到属性改变。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Update</span>(<span class="params">param</span>) </span>&#123;</div><div class="line">param.message = <span class="string">"I was changed"</span>; <span class="comment">// 改变对象的属性；可从调用代码中看到改变。</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// 创建一个对象，并赋给一个属性。</span></div><div class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</div><div class="line">obj.message = <span class="string">"This is the original"</span>;</div><div class="line"></div><div class="line">Clobber(obj);<span class="comment">// 调用 Clobber，并输出 obj.message。注意，它没有发生变化。</span></div><div class="line"><span class="built_in">window</span>.alert(obj.message); <span class="comment">// 仍然显示 "This is the original"。</span></div><div class="line"></div><div class="line">Update(obj);<span class="comment">// 调用 Update，并输出 obj.message。注意，它已经被改变了。</span></div><div class="line"><span class="built_in">window</span>.alert(obj.message); <span class="comment">// 显示 "I was changed"。</span></div></pre></td></tr></table></figure></p>
+<h1 id="14-在浏览器中显示信息"><a href="#14-在浏览器中显示信息" class="headerlink" title="14.在浏览器中显示信息"></a>14.在浏览器中显示信息</h1><p>document 的write()和writeln()方法是向body中添加内容的方法，添加的位置是当前执行document.write的位置（如果在<head>中则添加在body的开始位置）。<br>writeln() 方法与 write() 方法几乎一样，差别仅在于是前者将在所提供的任何字符串后添加一个换行符。在 HTML 中，这通常只会在后面产生一个空格；不过如果使用了 <pre> 和 <xmp> 标识，这个换行符会被解释，且在浏览器中显示。</xmp></pre></head></p>
+<h1 id="15-call和apply"><a href="#15-call和apply" class="headerlink" title="15.call和apply"></a>15.call和apply</h1><p><strong>call</strong>：调用一个对象的一个方法，以另一个对象替换当前对象。<br><strong>apply</strong>：应用某一对象的一个方法，用另一个对象替换当前对象。<br>如：<br>A.call(B,参数) 意思是 用A代替B，即调用 A(参数) 方法。参数可以是任意值<br>apply方法和call用法一样，只是apply参数必须是数据或者arguments 对象。<br>这两个对象可用于js的继承实现，如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params">name</span>)</span>&#123;    </div><div class="line">	<span class="keyword">this</span>.name = name;    </div><div class="line">	<span class="keyword">this</span>.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;    </div><div class="line">		alert(<span class="keyword">this</span>.name);    </div><div class="line">	&#125;    </div><div class="line">&#125;    </div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Cat</span>(<span class="params">name</span>)</span>&#123;  </div><div class="line">Animal.call(<span class="keyword">this</span>, name); <span class="comment">//用Animal对象替换this对象，即cat就继承了Animal的所有属性和方法</span></div><div class="line">&#125;    </div><div class="line"></div><div class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Cat(<span class="string">"Black Cat"</span>);   </div><div class="line">cat.showName();</div></pre></td></tr></table></figure></p>
+<h1 id="16-比较重要的方法"><a href="#16-比较重要的方法" class="headerlink" title="16.比较重要的方法"></a>16.比较重要的方法</h1><h2 id="1-compile"><a href="#1-compile" class="headerlink" title="(1). compile()"></a>(1). compile()</h2><p>把正则表达式编译为内部格式，从而执行得更快。用于在脚本执行过程中编译正则表达式,也可用于改变和重新编译正则表达式。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">CompileDemo</span>(<span class="params"></span>)</span>&#123;   </div><div class="line">	<span class="keyword">var</span> rs;   </div><div class="line">	<span class="keyword">var</span> s = <span class="string">"AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPp"</span></div><div class="line">	<span class="keyword">var</span> r = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"[A-Z]"</span>, <span class="string">"g"</span>);</div><div class="line">	<span class="keyword">var</span> a1 = s.match(r);</div><div class="line">	r.compile(<span class="string">"[a-z]"</span>, <span class="string">"g"</span>);<span class="comment">//改变并重新编译正则表达式</span></div><div class="line">	<span class="keyword">var</span> a2 = s.match(r);</div><div class="line">	<span class="keyword">return</span>(a1 + <span class="string">"\n"</span> + a2;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="2-encodeURI-、decodeURI"><a href="#2-encodeURI-、decodeURI" class="headerlink" title="(2). encodeURI()、decodeURI()"></a>(2). encodeURI()、decodeURI()</h2><p>将文本字符串编码为一个有效的统一资源标识符 (URI)。<br>decodeURI() 函数可对 encodeURI() 函数编码过的 URI 进行解码。<br>说明：<br>使用 decodeURI 方法代替已经过时的 unescape 方法；<br>encodeURI 方法不会对下列字符进行编码：”:”、”/“、”;” 和 “?”。请使用 encodeURIComponent 方法对这些字符进行编码。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> test1=<span class="string">"http://www.w3school.com.cn/My first/"</span></div><div class="line"><span class="built_in">document</span>.write(<span class="built_in">encodeURI</span>(test1)+ <span class="string">"&lt;br /&gt;"</span>)</div><div class="line"><span class="built_in">document</span>.write(（<span class="number">2</span>）<span class="built_in">decodeURI</span>(test1))</div></pre></td></tr></table></figure></p>
+<p>结果：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">http:<span class="comment">//www.w3school.com.cn/My%20first/</span></div><div class="line">http:<span class="comment">//www.w3school.com.cn/My first/</span></div></pre></td></tr></table></figure></p>
+<h2 id="3-encodeURIComponent-、decodeURIComponent"><a href="#3-encodeURIComponent-、decodeURIComponent" class="headerlink" title="(3). encodeURIComponent()、decodeURIComponent()"></a>(3). encodeURIComponent()、decodeURIComponent()</h2><p>将文本字符串编码为一个统一资源标识符 (URI) 的一个有效组件。<br>decodeURIComponent() 函数可对 encodeURIComponent() 函数编码的 URI 进行解码。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> test1=<span class="string">"http://www.w3school.com.cn/My first/"</span></div><div class="line"><span class="built_in">document</span>.write(<span class="built_in">encodeURIComponent</span>(test1)+ <span class="string">"&lt;br /&gt;"</span>)</div><div class="line"><span class="built_in">document</span>.write(<span class="built_in">decodeURIComponent</span>(test1))</div><div class="line">结果：</div><div class="line">http%<span class="number">3</span>A%<span class="number">2</span>F%<span class="number">2</span>Fwww.w3school.com.cn%<span class="number">2</span>FMy%<span class="number">20</span>first%<span class="number">2</span>F</div><div class="line">http:<span class="comment">//www.w3school.com.cn/My first/</span></div></pre></td></tr></table></figure></p>
+<h2 id="4-escape-、unescape"><a href="#4-escape-、unescape" class="headerlink" title="(4). escape()、unescape()"></a>(4). escape()、unescape()</h2><p>escape() 函数可对字符串进行编码，这样就可以在所有的计算机上读取该字符串。<br>可以使用 unescape() 对 escape() 编码的字符串进行解码.<br>说明：<br>escape 方法不能够用来对统一资源标示码 (URI) 进行编码。对其编码应使用 encodeURI 和encodeURIComponent 方法。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">escape</span>(<span class="string">"Visit W3School!"</span>)<span class="comment">//Visit%20W3School%21</span></div><div class="line"><span class="built_in">escape</span>(<span class="string">"?!=()#%&amp;"</span>)<span class="comment">//%3F%21%3D%28%29%23%25%26</span></div></pre></td></tr></table></figure></p>
+<h2 id="5-eval"><a href="#5-eval" class="headerlink" title="(5). eval()"></a>(5). eval()</h2><p>检查 JScript 代码并执行<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> total = <span class="built_in">eval</span>(<span class="string">"6 * 9 % 7"</span>); <span class="comment">// 将变量 total 赋值为 5。</span></div><div class="line">total = <span class="built_in">eval</span>(<span class="string">"6 * (9 % 7)"</span>) <span class="comment">// 将变量 total 赋值为 12。</span></div><div class="line"><span class="built_in">eval</span>(<span class="string">"var mydate = new Date();"</span>);<span class="comment">//创建了一个包含 Date 对象的新变量 mydate.</span></div></pre></td></tr></table></figure></p>
+<h2 id="6-exec-、match"><a href="#6-exec-、match" class="headerlink" title="(6). exec()、match()"></a>(6). exec()、match()</h2><p>exec() 是RegExp类的方法，参数是要匹配的字符串，只返回第一个匹配项。<br>match() 是String类的方法，参数是正则表达式模式或正则表达式对象，返回匹配结果的数组。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> str= <span class="string">"cat,hat"</span> ;</div><div class="line"><span class="keyword">var</span> p=<span class="regexp">/at/</span>; <span class="comment">//没有g属性</span></div><div class="line">alert(p.exec(str))<span class="comment">//at</span></div><div class="line">alert(str.match(p))<span class="comment">//"at"</span></div><div class="line"><span class="comment">//以上这种场合下exec等价于match。但是如果正则表达式是全局匹配（g属性）的，那么以上代码结果不一样了:</span></div><div class="line"><span class="keyword">var</span> str= <span class="string">"cat,hat"</span> ;</div><div class="line"><span class="keyword">var</span> p=<span class="regexp">/at/g</span>; <span class="comment">//注意g属性</span></div><div class="line">alert(p.exec(str))<span class="comment">//at</span></div><div class="line">alert(str.match(p))<span class="comment">//at,at</span></div></pre></td></tr></table></figure></p>
+<p>说明：<br>exec()永远只返回第一个匹配，相当于match()中正则表达式不带/g的情况。<br>但是，exec如果找到了匹配，而且包含分组的话（正则表达式中含有括号），返回的数组将包含多个元素，第一个元素是找到的匹配，之后的元素依次为该匹配中的第一、第二…个分组（反向引用）如下的代码将弹出”cat2,at”:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> str= <span class="string">"cat2,hat8"</span> ;</div><div class="line"><span class="keyword">var</span> p=<span class="regexp">/c(at)\d/</span>;</div><div class="line">alert(p.exec(str));<span class="comment">//等于 alert(str.match(p));</span></div></pre></td></tr></table></figure></p>
+<h2 id="7-Date对象"><a href="#7-Date对象" class="headerlink" title="(7). Date对象"></a>(7). Date对象</h2><h3 id="1-获取时间"><a href="#1-获取时间" class="headerlink" title="1). 获取时间"></a>1). 获取时间</h3><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetNowDate</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> d, s = <span class="string">"今天日期是: "</span>,</div><div class="line">    x = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"星期日"</span>, <span class="string">"星期一"</span>, <span class="string">"星期二"</span>, <span class="string">"星期三"</span>, <span class="string">"星期四"</span>, <span class="string">"星期五"</span>, <span class="string">"星期六"</span>);</div><div class="line"></div><div class="line">  d = <span class="keyword">new</span> <span class="built_in">Date</span>();</div><div class="line">  s += d.getFullYear() + <span class="string">"-"</span>; <span class="comment">//getYear()获取当前时间和1900的差值，该方法已过期</span></div><div class="line">  s += (d.getMonth() + <span class="number">1</span>) + <span class="string">"-"</span>;</div><div class="line">  s += d.getDate() + <span class="string">" "</span>;</div><div class="line"></div><div class="line">  s += d.getHours() + <span class="string">":"</span>;</div><div class="line">  s += d.getMinutes() + <span class="string">":"</span>;</div><div class="line">  s += d.getSeconds() + <span class="string">":"</span>;</div><div class="line">  s += d.getMilliseconds() + <span class="string">" "</span>;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> day = d.getDay(); <span class="comment">//获取星期，返回0 到 6 之间的整数，代表周日到周六</span></div><div class="line">  s += x[day] + <span class="string">" "</span>;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> time = d.getTime(); <span class="comment">//从1970 年 1 月 1 日开始的毫秒数</span></div><div class="line">  s += <span class="string">"\n\r距离1970年1月1日已过【"</span> + time + <span class="string">"】毫秒"</span>;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> tz = d.getTimezoneOffset(); <span class="comment">//当前计算机上的时间和全球标准时间 (UTC)之间差别的总分钟数（计算方法：UTC-当前机器时间，即当前机器慢为正值，否则为负值）</span></div><div class="line">  s += <span class="string">"\n\r您的电脑和全球标准时间（UTC）相差了【"</span> + tz + <span class="string">"】分钟"</span>;</div><div class="line">  <span class="keyword">return</span> s;</div><div class="line">&#125;</div><div class="line">alert(GetNowDate());</div></pre></td></tr></table></figure>
+<h3 id="2-设置时间"><a href="#2-设置时间" class="headerlink" title="2). 设置时间"></a>2). 设置时间</h3><p>Date对象中以set开头的方法表示设置时间，如：setFullYear()设置年份，setDate()设置日期……等，这些函数返回的是修改后的毫秒数。<br>如果参数为月份的有效日期，则直接把日期改为参数日期，<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2013-7-12 0:0:0:0"</span>).setDate(<span class="number">2</span>)).toLocaleString() <span class="comment">//"2013/7/2 上午12:00:00"</span></div></pre></td></tr></table></figure></p>
+<p>如果 参数 的值大于 Date 对象中所保存的月份的天数或者是负数。那么日期将被设置为由 参数 减去所保存月份中天数而得到的日期，<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2013-7-12 0:0:0:0"</span>).setDate(<span class="number">-2</span>)).toLocaleString() <span class="comment">//"2013/6/28 上午12:00:00"</span></div><div class="line"><span class="keyword">new</span> <span class="built_in">Date</span>(<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">"2013-7-12 0:0:0:0"</span>).setDate(<span class="number">32</span>)).toLocaleString() <span class="comment">//"2013/8/1 上午12:00:00"</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-Date-parse"><a href="#3-Date-parse" class="headerlink" title="3). Date.parse()"></a>3). Date.parse()</h3><p>参数是一个日期字符串，返回该日期与 1970 年 1 月 1 日午夜之间所间隔的毫秒数。<br>如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">Date</span>.parse(<span class="string">"2015-7-12 0:0:0"</span>)<span class="comment">//1436630400000</span></div><div class="line"><span class="built_in">Date</span>.parse(<span class="string">"November 1, 1997 10:17 AM"</span>)<span class="comment">//878350620000</span></div></pre></td></tr></table></figure></p>
+<h2 id="8-indexOf-、lastIndexOf"><a href="#8-indexOf-、lastIndexOf" class="headerlink" title="(8). indexOf()、lastIndexOf()"></a>(8). indexOf()、lastIndexOf()</h2><p>返回 String 对象内第一次和最后一次出现子字符串的字符位置。</p>
+<h2 id="9-isFinite"><a href="#9-isFinite" class="headerlink" title="(9). isFinite()"></a>(9). isFinite()</h2><p>返回一个 Boolean 值,指明所提供的数字是否是有限的。<br>如果 参数 是 NaN 、负无穷或正无穷，那么 该方法将返回 false 。 如果是这三种情况，函数返回 trues 。<br>说明：如果参数是字符类型(指无法强制转化为Number类型的)，则返回 false .</p>
+<h2 id="10-isNaN"><a href="#10-isNaN" class="headerlink" title="(10). isNaN()"></a>(10). isNaN()</h2><p>返回一个 Boolean 值，指明提供的值是否是保留值 NaN （不是数字）。<br>如果值是 NaN， 那么 isNaN 函数返回 true ，否则返回 false 。 使用这个函数的典型情况是检查 parseInt 和 parseFloat 方法的返回值。<br>还有一种办法，变量可以与它自身进行比较。 如果比较的结果不等，那么它就是 NaN 。 这是因为 NaN 是唯一与自身不等的值。 </p>
+<h2 id="11-Array-对象"><a href="#11-Array-对象" class="headerlink" title="(11). Array 对象"></a>(11). Array 对象</h2><h3 id="1-增加"><a href="#1-增加" class="headerlink" title="1). 增加"></a>1). 增加</h3><p><strong>push(element)</strong>:将新元素添加到数组末尾，返回值：新数组长度。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].push(<span class="number">4</span>) =&gt; <span class="number">4</span></div></pre></td></tr></table></figure></p>
+<p><strong>unshift(element)</strong>:将新元素添加到数组开始位置,返回值：新数组长度。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].unshift(<span class="number">0</span>,<span class="number">-1</span>) =&gt; <span class="number">8</span> （新数组：[<span class="number">0</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]）</div></pre></td></tr></table></figure></p>
+<h3 id="2-删除"><a href="#2-删除" class="headerlink" title="2). 删除"></a>2). 删除</h3><p><strong>pop()</strong>:移除数组中的最后一个元素,返回值：被移除的元素。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].pop() =&gt; <span class="number">3</span></div></pre></td></tr></table></figure></p>
+<p><strong>shift()</strong>:移除数组中的第一元素，返回值：被移除的元素。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].shift() =&gt; <span class="number">1</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-修改"><a href="#3-修改" class="headerlink" title="3). 修改"></a>3). 修改</h3><p><strong>splice(startIndex,deleteCount,[newElement1,newElement2…])</strong>：移除一个或多个元素，如果必要，在所移除元素的位置上插入新元素，返回值：所移除的元素<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].splice(<span class="number">2</span>,<span class="number">2</span>) =&gt; [<span class="number">3</span>, <span class="number">4</span>] （新数组：[<span class="number">1</span>,<span class="number">2</span>,<span class="number">5</span>,<span class="number">6</span>]）</div><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].splice(<span class="number">2</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>) =&gt; [<span class="number">3</span>, <span class="number">4</span>] （新数组：[<span class="number">1</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>]）</div></pre></td></tr></table></figure></p>
+<h3 id="4-查询"><a href="#4-查询" class="headerlink" title="4). 查询"></a>4). 查询</h3><p><strong>slice(startIndex,endIndex)</strong>：返回数组的一部分，返回值：[startIndex,endIndex) 中的元素（包含开始索引的元素，不包含结束索引的元素）。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].slice(<span class="number">2</span>,<span class="number">4</span>) =&gt; [<span class="number">3</span>, <span class="number">4</span>]</div><div class="line"></div><div class="line">说明：</div><div class="line">  如果 startIndex 为负，将它作为 length + startIndex处理，此处 length 为数组的长度。[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].slice(<span class="number">-4</span>,<span class="number">4</span>) =&gt; [<span class="number">3</span>, <span class="number">4</span>]</div><div class="line">  如果 endIndex 为负，就将它作为 length + endIndex 处理，此处 length 为数组的长度。[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].slice(<span class="number">2</span>,<span class="number">-1</span>) =&gt; [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div><div class="line">  如果省略 endIndex ，那么 slice 方法将一直复制到 arrayObj 的结尾。[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].slice(<span class="number">2</span>) =&gt; [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">  如果 endIndex 出现在 startIndex 之前，不复制任何元素到新数组中。[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>].slice(<span class="number">4</span>,<span class="number">2</span>) =&gt; []</div></pre></td></tr></table></figure></p>
+<h3 id="5-其他操作"><a href="#5-其他操作" class="headerlink" title="5). 其他操作"></a>5). 其他操作</h3><p><strong>concat(arr1,arr2…)</strong>：拼接（或组合）多个数组，返回值：组合后的新数组。<br>eg:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].concat([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]) =&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</div></pre></td></tr></table></figure></p>
+<p><strong>join(str)</strong>：用指定的符号str把数组元素连接成一个字符串,返回值：拼接后的字符串。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].join(<span class="string">'-'</span>) =&gt; <span class="number">1</span><span class="number">-2</span><span class="number">-3</span></div></pre></td></tr></table></figure></p>
+<p><strong>reverse()</strong>：反转数组元素，返回值：数组反转后的新数组。<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].reverse() =&gt; [<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</div></pre></td></tr></table></figure></p>
+<p><strong>sort([functionName])</strong>：对数组进行排序，返回值：新排序后的数组。（参数是用来排序的函数，如果参数被省略，那么元素将按照 ASCII 字符顺序进行升序排列）<br>eg：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">[<span class="number">6</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>].sort() =&gt; [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</div><div class="line">[<span class="number">10</span>,<span class="number">5</span>,<span class="number">40</span>,<span class="number">25</span>,<span class="number">1000</span>,<span class="number">1</span>].sort() =&gt; [<span class="number">1</span>, <span class="number">10</span>, <span class="number">1000</span>, <span class="number">25</span>, <span class="number">40</span>, <span class="number">5</span>] <span class="comment">//这种情况需要用到排序函数了</span></div><div class="line">[<span class="number">10</span>,<span class="number">5</span>,<span class="number">40</span>,<span class="number">25</span>,<span class="number">1000</span>,<span class="number">1</span>].sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;<span class="keyword">return</span> a&gt;b&#125;) =&gt;[<span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">40</span>, <span class="number">1000</span>]</div></pre></td></tr></table></figure></p>
+
+        </div>
+        
+        <blockquote class="post-copyright">
+    <div class="content">
+        险觅天应闷，狂搜海亦枯。不同文赋易，为著之者乎：<a href="/2016/11/25/javascript-basic/" target="_blank" rel="external">http://lhyin.com/2016/11/25/javascript-basic/</a>
+    </div>
+    <footer>
+        <a href="http://lhyin.com">
+            <img src="/img/author.jpg" alt="殷路辉(Alec)">
+            殷路辉(Alec)
+        </a>
+    </footer>
+</blockquote>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/25/javascript-basic/&title=《温故而知新：JavaScript的16个基础要点》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/25/javascript-basic/&title=《温故而知新：JavaScript的16个基础要点》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/25/javascript-basic/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《温故而知新：JavaScript的16个基础要点》 — Alec Yin's World&url=http://lhyin.com/2016/11/25/javascript-basic/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/25/javascript-basic/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>   
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/11/24/mingju/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">妆罢低声问夫婿，画眉深浅入时无？</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+    
+<div class="duoshuo" id="comments">
+	<div class="ds-thread" data-thread-key="javascript-basic" data-title="温故而知新：JavaScript的16个基础要点" data-url="http://lhyin.com/2016/11/25/javascript-basic/"></div>
+</div>
+<script src="/js/embed.min.js?v=1.2"></script>
+<script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
+<script>
+var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
+</script>
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        妆罢低声问夫婿，画眉深浅入时无？
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+  </main>
+  <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
+
+
+
+<div class="global-share" id="globalShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/25/javascript-basic/&title=《温故而知新：JavaScript的16个基础要点》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/25/javascript-basic/&title=《温故而知新：JavaScript的16个基础要点》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/25/javascript-basic/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《温故而知新：JavaScript的16个基础要点》 — Alec Yin's World&url=http://lhyin.com/2016/11/25/javascript-basic/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/25/javascript-basic/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2016/11/25/javascript-basic/" alt="微信分享二维码"/>
+</div>
+
+
+
+
+<script>
+// 百度站长：搜索收录
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+// 百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?280a86e99e0ecf841596b5e4d3c87d38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script src="/js/main.min.js?v=1.2"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.2"></script>
+
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-87959800-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+</body>
+</html>
