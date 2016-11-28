@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="google-site-verification" content="true">
+  
+  
+  
+  <title>把123 转化成 一二三 | Alec Yin&#39;s World | 静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="算法">
+  <meta name="description" content="题目把阿拉伯数字转化成大写形式，如：
+
+
+
+转化前
+转换后
+
+
+
+
+1
+一
+
+
+10
+十
+
+
+100
+一百
+
+
+1001
+一千零一
+
+
+10000000000099
+十万亿零九十九
+
+
+999999999999999
+九百九十九万亿九千九百九十九亿九千九百九十九万九千九百九十九
+
+
+
+代码function numberToChinese(num) &amp;#123;    var chnNumChar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把123 转化成 一二三">
+<meta property="og:url" content="http://lhyin.com/2016/11/28/arithmetic/index.html">
+<meta property="og:site_name" content="Alec Yin's World">
+<meta property="og:description" content="题目把阿拉伯数字转化成大写形式，如：
+
+
+
+转化前
+转换后
+
+
+
+
+1
+一
+
+
+10
+十
+
+
+100
+一百
+
+
+1001
+一千零一
+
+
+10000000000099
+十万亿零九十九
+
+
+999999999999999
+九百九十九万亿九千九百九十九亿九千九百九十九万九千九百九十九
+
+
+
+代码function numberToChinese(num) &amp;#123;    var chnNumChar">
+<meta property="og:updated_time" content="2016-11-28T10:30:10.583Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="把123 转化成 一二三">
+<meta name="twitter:description" content="题目把阿拉伯数字转化成大写形式，如：
+
+
+
+转化前
+转换后
+
+
+
+
+1
+一
+
+
+10
+十
+
+
+100
+一百
+
+
+1001
+一千零一
+
+
+10000000000099
+十万亿零九十九
+
+
+999999999999999
+九百九十九万亿九千九百九十九亿九千九百九十九万九千九百九十九
+
+
+
+代码function numberToChinese(num) &amp;#123;    var chnNumChar">
+  
+  <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1.2">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-angle-double-left"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/author.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">殷路辉(Alec)</h5>
+          <a href="mailto:1020362662@qq.com" title="1020362662@qq.com" class="mail">1020362662@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-clock-o"></i>
+                时间归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-file-code-o"></i>
+                技术文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-heart"></i>
+                诗文收藏
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/yinluhui" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                开源中国
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Alec-Yin" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.cnblogs.com/yinluhui0229" target="_blank" >
+                <i class="icon icon-lg icon-rss-square"></i>
+                博客园
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-online/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-tv"></i>
+                我的PC前端框架
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-mobile/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-mobile"></i>
+                我的无线前端框架
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-male"></i>
+                关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-link"></i>
+                友情链接
+              </a>
+            </li>
+        
+      </ul>
+
+      <footer class="footer">
+  <p>人气指数：<span id="busuanzi_value_site_uv" class="uvNum">ing...</span></p>
+  <p>Alec Yin&#39;s World &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+
+    </div>
+  </div>
+</aside>
+
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">把123 转化成 一二三</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container">
+        <h1 class="title">把123 转化成 一二三</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-11-28T09:43:52.000Z" itemprop="datePublished" class="page-time">
+  2016-11-28
+</time>
+
+
+            
+        </h5>
+    </div>
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#题目"><span class="post-toc-text">题目</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码"><span class="post-toc-text">代码</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="it-arithmetic" 
+  class="post-article article-type-it" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">把123 转化成 一二三</h1>
+        <div class="post-meta">
+            <time datetime="2016-11-28T09:43:52.000Z" itemprop="datePublished" class="post-time">
+  2016-11-28
+</time>
+
+            
+
+
+            <span id="busuanzi_container_page_pv" class="post-time">
+              阅读(<span id="busuanzi_value_page_pv">ing...</span>)
+            </span>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>把阿拉伯数字转化成大写形式，如：</p>
+<table>
+<thead>
+<tr>
+<th>转化前</th>
+<th style="text-align:center">转换后</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:center">一</td>
+</tr>
+<tr>
+<td>10</td>
+<td style="text-align:center">十</td>
+</tr>
+<tr>
+<td>100</td>
+<td style="text-align:center">一百</td>
+</tr>
+<tr>
+<td>1001</td>
+<td style="text-align:center">一千零一</td>
+</tr>
+<tr>
+<td>10000000000099</td>
+<td style="text-align:center">十万亿零九十九</td>
+</tr>
+<tr>
+<td>999999999999999</td>
+<td style="text-align:center">九百九十九万亿九千九百九十九亿九千九百九十九万九千九百九十九</td>
+</tr>
+</tbody>
+</table>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">numberToChinese</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> chnNumChar = [<span class="string">"零"</span>, <span class="string">"一"</span>, <span class="string">"二"</span>, <span class="string">"三"</span>, <span class="string">"四"</span>, <span class="string">"五"</span>, <span class="string">"六"</span>, <span class="string">"七"</span>, <span class="string">"八"</span>, <span class="string">"九"</span>];</div><div class="line">    <span class="keyword">var</span> chnUnitSection = [<span class="string">""</span>, <span class="string">"万"</span>, <span class="string">"亿"</span>, <span class="string">"万亿"</span>];</div><div class="line">    <span class="keyword">var</span> chnUnitChar = [<span class="string">""</span>, <span class="string">"十"</span>, <span class="string">"百"</span>, <span class="string">"千"</span>];</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">SectionToChinese</span>(<span class="params">section</span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> strIns = <span class="string">''</span>,</div><div class="line">            chnStr = <span class="string">''</span>;</div><div class="line">        <span class="keyword">var</span> unitPos = <span class="number">0</span>;</div><div class="line">        <span class="keyword">var</span> zero = <span class="literal">true</span>;</div><div class="line">        <span class="keyword">while</span> (section &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">var</span> v = section % <span class="number">10</span>;</div><div class="line">            <span class="keyword">if</span> (v === <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">if</span> (!zero) &#123;</div><div class="line">                    zero = <span class="literal">true</span>;</div><div class="line">                    chnStr = chnNumChar[v] + chnStr;</div><div class="line">                &#125;</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                zero = <span class="literal">false</span>;</div><div class="line">                strIns = chnNumChar[v];</div><div class="line">                strIns += chnUnitChar[unitPos];</div><div class="line">                chnStr = strIns + chnStr;</div><div class="line">            &#125;</div><div class="line">            unitPos++;</div><div class="line">            section = <span class="built_in">Math</span>.floor(section / <span class="number">10</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> chnStr;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params">num</span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> (num &gt; <span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">53</span>)) <span class="keyword">return</span> num;</div><div class="line">        <span class="keyword">var</span> unitPos = <span class="number">0</span>;</div><div class="line">        <span class="keyword">var</span> strIns = <span class="string">''</span>,</div><div class="line">            chnStr = <span class="string">''</span>;</div><div class="line">        <span class="keyword">var</span> needZero = <span class="literal">false</span>;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (num === <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> chnNumChar[<span class="number">0</span>];</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">while</span> (num &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">var</span> section = num % <span class="number">10000</span>;</div><div class="line">            <span class="keyword">if</span> (needZero) &#123;</div><div class="line">                chnStr = chnNumChar[<span class="number">0</span>] + chnStr;</div><div class="line">            &#125;</div><div class="line">            strIns = SectionToChinese(section);</div><div class="line">            strIns += (section !== <span class="number">0</span>) ? chnUnitSection[unitPos] : chnUnitSection[<span class="number">0</span>];</div><div class="line">            chnStr = strIns + chnStr;</div><div class="line">            needZero = (section &lt; <span class="number">1000</span>) &amp;&amp; (section &gt; <span class="number">0</span>);</div><div class="line">            num = <span class="built_in">Math</span>.floor(num / <span class="number">10000</span>);</div><div class="line">            unitPos++;</div><div class="line">        &#125;</div><div class="line">        chnStr = chnStr.indexOf(<span class="string">'一十'</span>) == <span class="number">0</span> ? chnStr.substr(<span class="number">1</span>) : chnStr;</div><div class="line">        <span class="keyword">return</span> chnStr;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> init(num);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        </div>
+        
+        <blockquote class="post-copyright">
+    <div class="content">
+        险觅天应闷，狂搜海亦枯。不同文赋易，为著之者乎：<a href="/2016/11/28/arithmetic/" target="_blank" rel="external">http://lhyin.com/2016/11/28/arithmetic/</a>
+    </div>
+    <footer>
+        <a href="http://lhyin.com">
+            <img src="/img/author.jpg" alt="殷路辉(Alec)">
+            殷路辉(Alec)
+        </a>
+    </footer>
+</blockquote>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/28/arithmetic/&title=《把123 转化成 一二三》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/28/arithmetic/&title=《把123 转化成 一二三》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/28/arithmetic/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《把123 转化成 一二三》 — Alec Yin's World&url=http://lhyin.com/2016/11/28/arithmetic/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/28/arithmetic/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>   
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/11/28/mingju-1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">“有缘千里来相会”下句是啥？</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/11/28/weixin-share/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">NET实现微信分享和获取openid</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+    
+<div class="duoshuo" id="comments">
+	<div class="ds-thread" data-thread-key="arithmetic" data-title="把123 转化成 一二三" data-url="http://lhyin.com/2016/11/28/arithmetic/"></div>
+</div>
+<script src="/js/embed.min.js?v=1.2"></script>
+<script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
+<script>
+var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
+</script>
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        妆罢低声问夫婿，画眉深浅入时无？
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+  </main>
+  <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
+
+
+
+<div class="global-share" id="globalShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/28/arithmetic/&title=《把123 转化成 一二三》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/28/arithmetic/&title=《把123 转化成 一二三》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/28/arithmetic/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《把123 转化成 一二三》 — Alec Yin's World&url=http://lhyin.com/2016/11/28/arithmetic/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/28/arithmetic/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2016/11/28/arithmetic/" alt="微信分享二维码"/>
+</div>
+
+
+
+
+<script>
+// 百度站长：搜索收录
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+// 百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?280a86e99e0ecf841596b5e4d3c87d38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script src="/js/main.min.js?v=1.2"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.2"></script>
+
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-87959800-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+</body>
+</html>

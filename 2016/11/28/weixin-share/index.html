@@ -7,23 +7,32 @@
   
   
   
-  <title>Alec Yin&#39;s World | 静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</title>
+  <title>NET实现微信分享和获取openid | Alec Yin&#39;s World | 静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3F51B5">
   
   
-  <meta name="keywords" content="殷路辉, 前端开发, 强大的前端架构, 好用的前端架构, 移动前端, PC前端, Web前端, 软件工程, 前端博客, html5, css3, ajax, css, html, js, es6, RN, React, React Native">
-  <meta name="description" content="9cJFXrOaxR">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alec Yin's World">
-<meta property="og:url" content="http://lhyin.com/baidu_verify_9cJFXrOaxR.html">
+  <meta name="keywords" content="微信开发">
+  <meta name="description" content="开发工具和技术VS2010开发，MVC3架构。
+开发说明通过调用微信官方接口实现获取openid，和分享好友功能，实现获取signature和jsapi_ticket,并在服务端进行缓存AccessToken和jsapi_ticket。步骤：
+
+配置服务号网页授权获取用户基本信息，这个要和获取openid后跳转的地址域名一直，比如跳转地址为：http://waptest.Alec.com/niha">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NET实现微信分享和获取openid">
+<meta property="og:url" content="http://lhyin.com/2016/11/28/weixin-share/index.html">
 <meta property="og:site_name" content="Alec Yin's World">
-<meta property="og:description" content="9cJFXrOaxR">
-<meta property="og:updated_time" content="2016-11-23T03:28:29.860Z">
+<meta property="og:description" content="开发工具和技术VS2010开发，MVC3架构。
+开发说明通过调用微信官方接口实现获取openid，和分享好友功能，实现获取signature和jsapi_ticket,并在服务端进行缓存AccessToken和jsapi_ticket。步骤：
+
+配置服务号网页授权获取用户基本信息，这个要和获取openid后跳转的地址域名一直，比如跳转地址为：http://waptest.Alec.com/niha">
+<meta property="og:updated_time" content="2016-11-28T08:47:50.130Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alec Yin's World">
-<meta name="twitter:description" content="9cJFXrOaxR">
+<meta name="twitter:title" content="NET实现微信分享和获取openid">
+<meta name="twitter:description" content="开发工具和技术VS2010开发，MVC3架构。
+开发说明通过调用微信官方接口实现获取openid，和分享好友功能，实现获取signature和jsapi_ticket,并在服务端进行缓存AccessToken和jsapi_ticket。步骤：
+
+配置服务号网页授权获取用户基本信息，这个要和获取openid后跳转的地址域名一直，比如跳转地址为：http://waptest.Alec.com/niha">
   
   <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css?v=1.2">
@@ -149,7 +158,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis"></div>
+        <div class="flex-col header-title ellipsis">NET实现微信分享和获取openid</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -168,11 +177,17 @@
         
     </div>
 </header>
-<header class="content-header page-header">
+<header class="content-header post-header">
 
     <div class="container">
-        <h1 class="title"></h1>
+        <h1 class="title">NET实现微信分享和获取openid</h1>
         <h5 class="subtitle">
+            
+                <time datetime="2016-11-28T08:42:17.000Z" itemprop="datePublished" class="page-time">
+  2016-11-28
+</time>
+
+
             
         </h5>
     </div>
@@ -182,24 +197,70 @@
 
 
 <div class="container body-wrap">
-    <article class="page-article theme-" itemprop="blogPage">
-        <div class="post-content page-content" id="page-content" itemprop="pageContent">
-            9cJFXrOaxR
-            <div style="text-align: right;">
-                <span id="busuanzi_container_page_pv" class="post-time">
-                  阅读(<span id="busuanzi_value_page_pv">ing...</span>)
-                </span>
-            </div>
-        </div>
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开发工具和技术"><span class="post-toc-text">开发工具和技术</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#开发说明"><span class="post-toc-text">开发说明</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#参考资料"><span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="it-weixin-share" 
+  class="post-article article-type-it" itemprop="blogPost">
 
+    <div class="post-card">
+        <h1 class="post-card-title">NET实现微信分享和获取openid</h1>
+        <div class="post-meta">
+            <time datetime="2016-11-28T08:42:17.000Z" itemprop="datePublished" class="post-time">
+  2016-11-28
+</time>
+
+            
+
+
+            <span id="busuanzi_container_page_pv" class="post-time">
+              阅读(<span id="busuanzi_value_page_pv">ing...</span>)
+            </span>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="开发工具和技术"><a href="#开发工具和技术" class="headerlink" title="开发工具和技术"></a>开发工具和技术</h1><p>VS2010开发，MVC3架构。</p>
+<h1 id="开发说明"><a href="#开发说明" class="headerlink" title="开发说明"></a>开发说明</h1><p>通过调用微信官方接口实现获取openid，和分享好友功能，实现获取signature和jsapi_ticket,并在服务端进行缓存AccessToken和jsapi_ticket。<br>步骤：</p>
+<ol>
+<li>配置服务号网页授权获取用户基本信息，这个要和获取openid后跳转的地址域名一直，比如跳转地址为：<a href="http://waptest.Alec.com/nihao/index.com" target="_blank" rel="external">http://waptest.Alec.com/nihao/index.com</a> ,那么就配置成：waptest.Alec.com；</li>
+<li>把服务号的appid和appsecret配置到web.config中；</li>
+<li>调用分享接口时，需要在<a href="https://mp.weixin.qq.com" target="_blank" rel="external">微信后台</a>【公众号设置-功能设置-JS接口安全域名】中设置你分享的当前网页的一级域名（注意端口号）。</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ul>
+<li><a href="http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html" target="_blank" rel="external">微信JS-SDK说明文档</a></li>
+<li><a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=jsapisign" target="_blank" rel="external">微信 JS 接口签名校验工具</a></li>
+<li><a href="http://mp.weixin.qq.com/wiki/7/2d301d4b757dedc333b9a9854b457b47.html" target="_blank" rel="external">公众号类型的接口权限说明</a></li>
+</ul>
+<p><a href="http://download.csdn.net/detail/yinluhui/8943783" target="_blank" rel="external">代码下载地址</a></p>
+
+        </div>
         
-        <div class="card page-about-me flex-row">
-            <a href="/" class="avatar waves-effect waves-circle waves-light"><img src="/img/author.jpg"></a>
-            <div class="content flex-col">
-                <p><strong>殷路辉(Alec)</strong></p>
-                <p><em>静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</em></p>
-                <p>技术只是服务生活的方式，而非牺牲生活的追求！</p>
-            </div>
+        <blockquote class="post-copyright">
+    <div class="content">
+        险觅天应闷，狂搜海亦枯。不同文赋易，为著之者乎：<a href="/2016/11/28/weixin-share/" target="_blank" rel="external">http://lhyin.com/2016/11/28/weixin-share/</a>
+    </div>
+    <footer>
+        <a href="http://lhyin.com">
+            <img src="/img/author.jpg" alt="殷路辉(Alec)">
+            殷路辉(Alec)
+        </a>
+    </footer>
+</blockquote>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信开发/">微信开发</a></li></ul>
+
 
             
 <div class="page-share-wrap">
@@ -209,7 +270,7 @@
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html&title=Alec Yin's World&pic=/" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/28/weixin-share/&title=《NET实现微信分享和获取openid》 — Alec Yin's World&pic=/" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -219,22 +280,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html&title=Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/28/weixin-share/&title=《NET实现微信分享和获取openid》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/baidu_verify_9cJFXrOaxR.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/28/weixin-share/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Alec Yin's World&url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html&via=http://lhyin.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NET实现微信分享和获取openid》 — Alec Yin's World&url=http://lhyin.com/2016/11/28/weixin-share/&via=http://lhyin.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/28/weixin-share/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -251,18 +312,34 @@
 
 
         </div>
-        
+    </div>   
 
-        
-<div class="page-reward">
-    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
-</div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/11/28/arithmetic/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">把123 转化成 一二三</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/11/28/javascript-middle/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">更上一层楼：JavaScript中各种对象类型的判断</h4>
+      </a>
+    </div>
+  
+</nav>
 
 
-
-        
+            
+    
 <div class="duoshuo" id="comments">
-	<div class="ds-thread" data-thread-key="hexo-page-baidu_verify_9cJFXrOaxR.html" data-title="" data-url="http://lhyin.com/baidu_verify_9cJFXrOaxR.html"></div>
+	<div class="ds-thread" data-thread-key="weixin-share" data-title="NET实现微信分享和获取openid" data-url="http://lhyin.com/2016/11/28/weixin-share/"></div>
 </div>
 <script src="/js/embed.min.js?v=1.2"></script>
 <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
@@ -274,8 +351,8 @@ var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
 
 
 
-    </article>
-    
+</article>
+
 <div id="reward" class="page-modal reward-lay">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <h3 class="reward-title">
@@ -301,6 +378,7 @@ var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
 </div>
 
 
+
 </div>
 
   </main>
@@ -315,7 +393,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html&title=Alec Yin's World&pic=/" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/11/28/weixin-share/&title=《NET实现微信分享和获取openid》 — Alec Yin's World&pic=/" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -325,22 +403,22 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html&title=Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/11/28/weixin-share/&title=《NET实现微信分享和获取openid》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/baidu_verify_9cJFXrOaxR.html" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/11/28/weixin-share/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Alec Yin's World&url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html&via=http://lhyin.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NET实现微信分享和获取openid》 — Alec Yin's World&url=http://lhyin.com/2016/11/28/weixin-share/&via=http://lhyin.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/11/28/weixin-share/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -351,7 +429,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/baidu_verify_9cJFXrOaxR.html" alt="微信分享二维码"/>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2016/11/28/weixin-share/" alt="微信分享二维码"/>
 </div>
 
 
