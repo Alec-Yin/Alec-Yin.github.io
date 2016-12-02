@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="google-site-verification" content="true">
+  
+  
+  
+  <title>会当凌绝顶：JavaScript高级内容 | Alec Yin&#39;s World | 静花水月双倒影，林木萧萧风渐轻。爱晚凭栏看归燕，我思君时君思卿。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="JavaScript">
+  <meta name="description" content="1.值类型 &amp;amp; 引用类型    function show(x) &amp;#123;        console.log(typeof(x));    // undefined        console.log(typeof(10));   // number        console.log(typeof(&apos;abc&apos;)); // string        console.log(t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="会当凌绝顶：JavaScript高级内容">
+<meta property="og:url" content="http://lhyin.com/2016/12/02/javascript-high/index.html">
+<meta property="og:site_name" content="Alec Yin's World">
+<meta property="og:description" content="1.值类型 &amp;amp; 引用类型    function show(x) &amp;#123;        console.log(typeof(x));    // undefined        console.log(typeof(10));   // number        console.log(typeof(&apos;abc&apos;)); // string        console.log(t">
+<meta property="og:updated_time" content="2016-12-02T13:00:46.259Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="会当凌绝顶：JavaScript高级内容">
+<meta name="twitter:description" content="1.值类型 &amp;amp; 引用类型    function show(x) &amp;#123;        console.log(typeof(x));    // undefined        console.log(typeof(10));   // number        console.log(typeof(&apos;abc&apos;)); // string        console.log(t">
+  
+  <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1.2">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-angle-double-left"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/author.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">殷路辉(Alec)</h5>
+          <a href="mailto:1020362662@qq.com" title="1020362662@qq.com" class="mail">1020362662@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-clock-o"></i>
+                时间归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-file-code-o"></i>
+                技术文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-heart"></i>
+                诗文收藏
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/yinluhui" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                开源中国
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Alec-Yin" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.cnblogs.com/yinluhui0229" target="_blank" >
+                <i class="icon icon-lg icon-rss-square"></i>
+                博客园
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-online/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-tv"></i>
+                我的PC前端框架
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-mobile/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-mobile"></i>
+                我的无线前端框架
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-male"></i>
+                关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-link"></i>
+                友情链接
+              </a>
+            </li>
+        
+      </ul>
+
+      <footer class="footer">
+  <p>人气指数：<span id="busuanzi_value_site_uv" class="uvNum">ing...</span></p>
+  <p>Alec Yin&#39;s World &copy; 2016</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+
+    </div>
+  </div>
+</aside>
+
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">会当凌绝顶：JavaScript高级内容</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container">
+        <h1 class="title">会当凌绝顶：JavaScript高级内容</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-02T12:59:36.000Z" itemprop="datePublished" class="page-time">
+  2016-12-02
+</time>
+
+
+            
+        </h5>
+    </div>
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="it-javascript-high" 
+  class="post-article article-type-it" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">会当凌绝顶：JavaScript高级内容</h1>
+        <div class="post-meta">
+            <time datetime="2016-12-02T12:59:36.000Z" itemprop="datePublished" class="post-time">
+  2016-12-02
+</time>
+
+            
+
+
+            <span id="busuanzi_container_page_pv" class="post-time">
+              阅读(<span id="busuanzi_value_page_pv">ing...</span>)
+            </span>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <figure class="highlight"><table><tr><td class="code"><pre><div class="line">1.值类型 &amp; 引用类型</div><div class="line">    function show(x) &#123;</div><div class="line">        console.log(typeof(x));    // undefined</div><div class="line">        console.log(typeof(10));   // number</div><div class="line">        console.log(typeof('abc')); // string</div><div class="line">        console.log(typeof(true));  // boolean</div><div class="line"></div><div class="line">        console.log(typeof(function () &#123; &#125;));  //function</div><div class="line"></div><div class="line">        console.log(typeof([1, 'a', true]));  //object</div><div class="line">        console.log(typeof (&#123; a: 10, b: 20 &#125;));  //object</div><div class="line">        console.log(typeof (null));  //object</div><div class="line">        console.log(typeof (new Number(10)));  //object</div><div class="line">    &#125;</div><div class="line">    show();</div><div class="line"></div><div class="line">    undefined, number, string, boolean 属于简单的值类型，不是对象；</div><div class="line">    函数、数组、对象、null、new Number(10)都是对象；</div><div class="line">    判断一个变量是不是对象非常简单。值类型的类型判断用typeof，引用类型的类型判断用instanceof。</div><div class="line"></div><div class="line">2. 语法糖（糖衣语法）</div><div class="line">	var obj = &#123; a: 10, b: 20 &#125;;</div><div class="line">	var arr = [5, 'x', true];</div><div class="line"></div><div class="line">  语法糖其实是一种“快捷方式”，上面的代码是一种缩写，完整的写法是：</div><div class="line">  var obj = new Object();</div><div class="line">  obj.a=10;</div><div class="line">  obj.b=20;</div><div class="line"></div><div class="line">  var arr= new Array();</div><div class="line">  arr[0]=5;</div><div class="line">  arr[1]='x';</div><div class="line">  arr[2]=true;</div><div class="line"></div><div class="line">3. 对象都是通过函数创建的，而函数又是一种对象</div><div class="line">	方法一：</div><div class="line">      var fn = function() &#123;</div><div class="line">      	alert(100);</div><div class="line">      &#125;;</div><div class="line">      fn.a = 10;</div><div class="line">      fn.b = function() &#123;</div><div class="line">      	alert(123);</div><div class="line">      &#125;;</div><div class="line">      fn.c = &#123;</div><div class="line">      	name: "王福朋",</div><div class="line">      	year: 1988</div><div class="line">      &#125;;</div><div class="line">      fn是函数，a/b/c是fn创建的对象。</div><div class="line">  方法二：</div><div class="line">	  var obj = &#123; a: 10, b: 20 &#125;;</div><div class="line">    var arr = [5, 'x', true];</div><div class="line"></div><div class="line">    其本质是：</div><div class="line">    var obj = new Object();</div><div class="line">    obj.a = 10;</div><div class="line">    obj.b = 20;</div><div class="line"></div><div class="line">    var arr = new Array();</div><div class="line">    arr[0] = 5;</div><div class="line">    arr[1] = 'x';</div><div class="line">    arr[2] = true;</div><div class="line"></div><div class="line">    而</div><div class="line">    console.log(typeof (Object));  // function</div><div class="line">	  console.log(typeof (Array));  // function</div><div class="line"></div><div class="line">4. 只有构造函数才有prototype属性。</div><div class="line">   通常我们自定义的函数都属于构造函数，所以都有此属性。</div><div class="line">   JS运行时环境内置的函数有些不是构造函数，比如alert和Math.sqrt等，就没有此属性。</div><div class="line">   注：构造函数是指有一个内部属性[[Construct]]，通过new可以创建对象的那些函数。</div><div class="line"></div><div class="line">5. 每个函数function都有一个prototype，即原型。</div><div class="line">   每个对象都有一个__proto__，即隐式原型。</div><div class="line">   只有构造函数才有prototype属性。</div><div class="line">   对象的__proto__指向的是创建它的函数的prototype。</div><div class="line">   函数的prototype都是被Object创建的，每个自定义函数创建之初，都会有一个prototype（它是如何被创建的，不得而知！）。</div><div class="line"></div><div class="line">   例如：</div><div class="line">   function Foo()&#123;&#125;;</div><div class="line">   var foo = new Foo();</div><div class="line">   Foo.__proto__ === Function.prototype // 任何函数都是由Function创建的，所以任何函数的__proto__都指向Function的prototype</div><div class="line">   foo.__proto__ === Foo.prototype // 对象的__proto__指向的是创建它的函数的prototype</div><div class="line">   Foo.prototype.__proto__ === Object.prototype // 如果是自定义的函数，它的prototype.__proto__ 指向 Object.prototype，因为自定义函数的prototype本质上就是和语法糖 var obj = &#123;&#125; 是一样的，都是被Object创建。</div><div class="line">   Object.prototype.__proto__ === null // Object.prototype也是个对象，它的__proto__是null（这是个特例，切记切记）</div><div class="line"></div><div class="line">   foo.prototype == undefined //只有函数才有prototype属性，foo是对象</div><div class="line">   Object.prototype === (new Object()).__proto__ // 如上所述，Object本身是一个函数，(new Object())是对象</div><div class="line">   Function.prototype.__proto__ === Object.prototype // Function是一个函数，它的prototype是被Object创建，所以它的Prototype.__proto__指向创建Object.prototype</div><div class="line">   Function.__proto__ === Function.prototype //Function也是一个函数，函数是一种对象，也有__proto__属性。既然是函数，那么它一定是被Function创建。所以——Function是被自身创建的</div><div class="line">   Object.__proto__ === Function.prototype //Object是个函数，也是对象，它的__proto__指向的是创建它的函数的prototype</div><div class="line">   参考：</div><div class="line">   		http://www.cnblogs.com/wangfupeng1988/p/3979290.html</div><div class="line">      http://cdn.laruence.com/wp-content/uploads/javascript_object_layout.jpg?_=2045005</div><div class="line"></div><div class="line">6. instanceof原理</div><div class="line">	Instanceof运算符的第一个变量是一个对象，暂时称为A；第二个变量一般是一个函数，暂时称为B。</div><div class="line">	Instanceof的判断规则是：</div><div class="line">		沿着A的__proto__这条线来找，如果B的prototype在这条线上，那么就返回true，否则返回false。</div><div class="line">	如：</div><div class="line">		function Foo()&#123;&#125;</div><div class="line">		var f1 = new Foo();</div><div class="line">		console.log(f1 instanceof Foo);	// true</div><div class="line">		console.log(f1 instanceof Object); // true</div><div class="line">		</div><div class="line">		分析方法：</div><div class="line">			f1的__proto__路线A：</div><div class="line">				(1) f1.__proto__ === Foo.prototype</div><div class="line">				(2) Foo.prototype.__proto__ === Object.prototype</div><div class="line">				(3) Object.prototype.__proto__ === null //到终点</div><div class="line">		结论：</div><div class="line">			f1 instanceof Foo ：A线路(1)中出现了Foo.prototype</div><div class="line">			f1 instanceof Object ：A线路(2)中出现了Object.prototype</div><div class="line">	参考：</div><div class="line">		http://www.cnblogs.com/wangfupeng1988/p/3979533.html</div><div class="line"></div><div class="line">7. 原型链</div><div class="line">  访问一个对象的属性时，先在基本属性中查找，如果没有，再沿着__proto__这条链向上找，这就是原型链。</div><div class="line">  例如：</div><div class="line">    function Foo()&#123;&#125;</div><div class="line">    var f1 = new Foo();</div><div class="line">    f1.a = 2;</div><div class="line">    f1.b = 3;</div><div class="line">    Foo.prototype.b = 6;</div><div class="line">    Foo.prototype.c = 7;</div><div class="line"></div><div class="line">    console.log(f1.a); // 2，a是f1的基本属性，直接访问没问题</div><div class="line">    console.log(f1.c); // 7，f1的基本属性中没有c，沿着原型链向上，f1.__proto__是Foo.prototype，而Foo.prototype有c，可以访问。</div><div class="line">    console.log(f1.b); // 3，b是f1的基本属性，直接访问没问题。可Foo.prototype还有一个b，但是不会显示，这种情况被称为“属性遮蔽”。</div><div class="line">  判断属性是基本属性（也叫实例属性）还是原型链上的属性（也叫原型属性）使用hasOwnProperty，一般在for...in..循环中。for...in...会输出实例属性和原型属性。</div><div class="line">  如：</div><div class="line">    var item;</div><div class="line">    for(item in f1)&#123;</div><div class="line">      console.log(item); // a,b,c</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    for(item in f1)&#123;</div><div class="line">      f1.hasOwnProperty(item) &amp;&amp; console.log(item); // a,b</div><div class="line">    &#125;</div><div class="line"></div><div class="line">8. 继承</div><div class="line">  在原型链的基础上，很容易理解继承。例如在原型链的实例中，f1.hasOwnProperty就是继承自Object.prototype。</div><div class="line">  过程如下：</div><div class="line">    (1) f1基本属性中没有hasOwnProperty，沿原型链向上找：f1.__proto__是Foo.prototype；</div><div class="line">    (2) Foo.prototype中也没有hasOwnProperty，继续沿原型链向上找：Foo.prototype.__proto__是Object.prototype；</div><div class="line">    (3) Object.prototype中有hasOwnProperty，查找结束，允许访问hasOwnProperty。</div><div class="line">  由于所有的对象的原型链都会找到Object.prototype，因此所有的对象都会有Object.prototype的方法。这就是所谓的“继承”。</div><div class="line">  另外，每个函数都有的call，apply方法，和length，arguments，caller等属性也都是继承下来的。</div><div class="line"></div><div class="line">9. 执行上下文/执行上下文环境</div><div class="line">  定义1：js在执行一段代码之前，会声明提前，赋值或赋初始值（即undefined）。所以同一代码段中，可以先访问，再定义，这就是“执行上下文”。</div><div class="line">  定义2：在执行代码之前，把将要用到的所有的变量都事先拿出来，有的直接赋值了，有的先用undefined占个空。</div><div class="line"></div><div class="line">  分4种情况：</div><div class="line">    第1种情况：变量、函数表达式--只提前声明，不提前赋值，默认赋值为undefined；</div><div class="line">      console.log(a); // undefined</div><div class="line">      var a=10;</div><div class="line">      console.log(fn1); // undefined</div><div class="line">      var fn1 = function()&#123;&#125;;</div><div class="line"></div><div class="line">    第2种情况：this关键字--提前声明并赋值</div><div class="line">      console.log(this); // Window &#123;external: Object, chrome: Object, document: document, __ctrip: Object, __SERVERDATE__: Object…&#125;</div><div class="line"></div><div class="line">    第3种情况：函数声明--提前声明并赋值</div><div class="line">      console.log(fn2); // function fn2()&#123;&#125;</div><div class="line">      function fn2()&#123;&#125;;</div><div class="line"></div><div class="line">    第4种情况：函数内部会创建自己独有的上下文环境</div><div class="line">      函数每被调用一次，都会产生一个新的执行上下文环境。因为不同的调用可能就会有不同的参数。</div><div class="line">      另外，每个函数在定义的时候（不是调用的时候），就已经确定了函数体内部自由变量的作用域。</div><div class="line">      如：</div><div class="line">        var a = 10;</div><div class="line"></div><div class="line">        function fn() &#123;</div><div class="line">          console.log(a); // a是自由变量，函数创建时，就确定了a要取值的作用域</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        function bar(f) &#123;</div><div class="line">          var a = 20;</div><div class="line">          f(); // 10，到创建fn的地方找变量a的作用域，而不是调用它的当前作用域。</div><div class="line">        &#125;</div><div class="line">        bar(fn);</div><div class="line"></div><div class="line">10. 执行上下文栈</div><div class="line">  如【执行上下文/执行上下文环境】所述，js代码中，会有无数的函数调用和嵌套调用，会产生无数的上下文环境，这么多上下文环境如何管理，以及如何销毁而释放内存呢？这就需要【执行上下文栈】的参与了。</div><div class="line"></div><div class="line">  执行上下文栈：执行全局代码时，会产生一个全局上下文环境，并将该上下文环境压入栈，每次调用函数都又会产生执行上下文环境，并将该函数上下文环境也压入栈。当函数调用完成时，该函数上下文环境出栈，并消除该函数上下文环境以及其中的数据，再重新回到全局上下文环境。处于活动状态的执行上下文环境只有一个。其实这是一个压栈出栈的过程。</div><div class="line">  http://images.cnitblog.com/blog/138012/201409/232122300768665.png</div><div class="line">  如：</div><div class="line">    var a = 10,   // 1. 进入全局上下文环境</div><div class="line">        fn,</div><div class="line">        bar = function(x) &#123;</div><div class="line">          var b = 5;</div><div class="line">          fn(x + b);   // 3. 进入fn函数上下文环境，并入栈，设为活动状态。该函数执行完毕后，bar函数上下文出栈，并及时销毁，释放内存</div><div class="line">        &#125;;</div><div class="line"></div><div class="line">    fn = function(y) &#123;</div><div class="line">      var c = 5;</div><div class="line">      console.log(y + c);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    bar(10);   // 2. 进入bar函数上下文环境，并入栈，设为活动状态。该函数执行完毕后，bar函数上下文出栈，并及时销毁，释放内存</div><div class="line"></div><div class="line">    参考：http://www.cnblogs.com/wangfupeng1988/p/3989357.html</div><div class="line"></div><div class="line">11. this</div><div class="line">  情况1：构造函数，this就代表new出来的对象。    </div><div class="line">    function Foo()&#123;</div><div class="line">      this.name = '典橙贸易';</div><div class="line">      this.year = 2016;</div><div class="line">      console.log(this); // Foo &#123;name: "典橙贸易", year: 2016&#125;</div><div class="line">    &#125;</div><div class="line">    var f1 = new Foo(); // 所谓构造函数就是用来new对象的函数。</div><div class="line"></div><div class="line">    另外，如果在原型链中使用this（Foo.prototype中使用this），this仍然代表new出来的对象。</div><div class="line">    function Foo()&#123;</div><div class="line">      this.name = '典橙贸易2016';</div><div class="line">    &#125;</div><div class="line">    Foo.prototype.getName = function()&#123;</div><div class="line">      console.log(this); // Foo &#123;name: "典橙贸易2016"&#125;</div><div class="line">    &#125;</div><div class="line">    var f1 = new Foo();</div><div class="line">    f1.getName();</div><div class="line"></div><div class="line">  情况2：函数作为对象的一个属性,并且被对象直接调用时，this指向该对象。</div><div class="line">    var obj = &#123;</div><div class="line">      name:'典橙贸易',</div><div class="line">      fn:function()&#123;</div><div class="line">        console.log(this); // Object &#123;name: "典橙贸易"&#125;</div><div class="line">        console.log(this.name); // 典橙贸易</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    obj.fn(); // 直接调用</div><div class="line"></div><div class="line">    // 如果不是直接调用，this就指向window</div><div class="line">    var obj = &#123;</div><div class="line">      name: '典橙贸易',</div><div class="line">      fn: function() &#123;</div><div class="line">        console.log(this); // Window &#123;external: Object, chrome: Object, document: document, __ctrip: Object, __SERVERDATE__: Object…&#125;</div><div class="line">        console.log(this.name); // undefined</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    var fn1 = obj.fn;</div><div class="line">    fn1();</div><div class="line"></div><div class="line">  情况3：函数用call或者apply调用，this就是传入的对象的值</div><div class="line">    var obj =&#123;</div><div class="line">      name:'典橙贸易'</div><div class="line">    &#125;</div><div class="line">    var fn = function()&#123;</div><div class="line">      console.log(this); // Object &#123;name: "典橙贸易"&#125;</div><div class="line">      console.log(this.name); // 典橙贸易</div><div class="line">    &#125;</div><div class="line">    fn.call(obj);</div><div class="line">    // 或者</div><div class="line">    // fn.apply(obj);</div><div class="line">    </div><div class="line">  情况4：全局 &amp; 调用普通函数，this是window</div><div class="line">    全局:</div><div class="line">    console.log(this===window); // true</div><div class="line"></div><div class="line">    调用普通函数:</div><div class="line">    var name ="典橙贸易";</div><div class="line">    var fn = function() &#123;</div><div class="line">      console.log(this); // Window &#123;external: Object, chrome: Object, document: document, __ctrip: Object, __SERVERDATE__: Object…&#125;</div><div class="line">      console.log(this.name); // 典橙贸易</div><div class="line">    &#125;</div><div class="line">    fn();</div><div class="line"></div><div class="line">    注意：</div><div class="line">    var obj = &#123;</div><div class="line">      name:'典橙贸易',</div><div class="line">      fn: function()&#123;</div><div class="line"></div><div class="line">        function f() &#123;</div><div class="line">          console.log(this); // Window &#123;external: Object, chrome: Object, document: document, __ctrip: Object, __SERVERDATE__: Object…&#125;</div><div class="line">          console.log(this.name); // undefined</div><div class="line">        &#125;</div><div class="line">        f(); // 函数f虽然是在obj.fn内部定义的，但是它仍然是一个普通的函数，this仍然指向window。</div><div class="line"></div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    obj.fn(); </div><div class="line"></div><div class="line">12. 作用域</div><div class="line">  知识点1：javascript中没有块级作用域。</div><div class="line">    如：</div><div class="line">      var i = 2;</div><div class="line">      if(i&gt;1)&#123;</div><div class="line">        var name ='典橙贸易';</div><div class="line">      &#125;</div><div class="line">      console.log(name); // 典橙贸易</div><div class="line">    for循环的&#123;&#125;也是类似。</div><div class="line"></div><div class="line">  知识点2：javascript除了全局作用域之外，只有函数可以创建自己的作用域，称为函数作用域。</div><div class="line">    如经典的闭包问题：</div><div class="line">      &lt;ul id = "list"&gt;</div><div class="line">        &lt;li&gt; we &lt;/li&gt; </div><div class="line">        &lt;li&gt; sdf &lt;/li&gt; </div><div class="line">        &lt;li&gt; cx &lt;/li&gt;</div><div class="line">        &lt;li&gt; h &lt;/li&gt; </div><div class="line">        &lt;li&gt; z &lt;/li&gt; </div><div class="line">      &lt;/ul&gt;</div><div class="line">      var list = document.getElementById('list');</div><div class="line">      var e = list.getElementsByTagName('li');</div><div class="line">      var i = 0;</div><div class="line"></div><div class="line">      错误写法：</div><div class="line">      for (; i &lt; e.length; i++) &#123;</div><div class="line">        e[i].onclick = function() &#123;</div><div class="line">          console.log(i);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      正确写法：</div><div class="line">      for (; i &lt; e.length; i++) &#123;</div><div class="line">        (function(a) &#123;</div><div class="line">          e[i].onclick = function() &#123;</div><div class="line">            console.log(a);</div><div class="line">          &#125;</div><div class="line">        &#125;)(i);</div><div class="line">      &#125;</div><div class="line">      等效于：</div><div class="line">      for (; i &lt; 5; i++) &#123;</div><div class="line">        var Fn = function(a) &#123;</div><div class="line">          e[i].onclick = function() &#123;</div><div class="line">            console.log(a);</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        Fn(i);</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    错误的原因：</div><div class="line">      e[i].onclick 每次循环，只是赋值给onclick，而for循环是没有块级作用域的，所以i的值会不断累加，直到最大值5，故每次循环都会输出5。</div><div class="line">    正确的原因：</div><div class="line">      由于函数可以创建自己的作用域，而且各个作用域间不会相互影响，所以每次循环Fn(i)都会创建一个特有的函数作用域提供给相应的onclick，而每个作用于中的a变量也不会相互影响。</div><div class="line"></div><div class="line">  知识点3：作用域最大的用处就是隔离变量，不同作用域下同名变量不会有冲突。</div><div class="line">    如：</div><div class="line">      &#123;</div><div class="line">        var a =1,b=2;</div><div class="line"></div><div class="line">        function fn1()&#123;</div><div class="line">          var a=100,b=200;</div><div class="line"></div><div class="line">          function fn2()&#123;</div><div class="line">            var a=1000,b=2000;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    三个作用域下都声明了“a和b”变量，但是他们不会有冲突。各自的作用域下，用各自的“a和b”。</div><div class="line"></div><div class="line"></div><div class="line">13. 自由变量及其取值规则</div><div class="line">  在A作用域中使用的变量x，却没有在A作用域中声明（即在其他作用域中声明的），对于A作用域来说，x就是一个自由变量。</div><div class="line">  如：</div><div class="line">    var x=1;</div><div class="line">    function fn()&#123;</div><div class="line">      var b=2;</div><div class="line">      console.log(x+b); // 这里的x就是自由变量</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  自由变量取值规则：要到创建 自由变量所在函数 的那个作用域中取值--是【创建】，而不是【调用】，也不是【父作用域】。</div><div class="line">  如：</div><div class="line">    var x=10;</div><div class="line">    function fn()&#123;</div><div class="line">      console.log(x); // fn创建了自由的函数作用域，所以无论什么地方调用它，都会输出10</div><div class="line">    &#125;</div><div class="line">    function show(f)&#123;</div><div class="line">      var x=20;</div><div class="line">      (function()&#123;</div><div class="line">        console.log(x); // 要到x所在的匿名函数的作用域中找x，故输出20</div><div class="line">        f(); // 要到创建fn函数的作用域中找x，故这里输出10，而不是20</div><div class="line">      &#125;)();</div><div class="line">    &#125;</div><div class="line">    show(fn);</div><div class="line"></div><div class="line">14. 作用域链</div><div class="line">  在自由变量的基础上理解作用域链更加容易。</div><div class="line">  在作用域Fn中使用一个变量A，如果Fn中没有定义A,则到创建Fn的那个作用域Fm中找，如果仍没有找到，则继续到创建Fm的作用域中找……依次类推，直至找到变量A或者到全局作用域中仍未找到 为止，这种跨越多个作用域的线路，就叫“作用域链”。</div><div class="line">  代码如下：</div><div class="line">    &#123;</div><div class="line">      // var A = 4; // 第4步，这是全局作用域，找到则返回4，如果到这里仍未找到，就结束，报错"A is not defined"</div><div class="line"></div><div class="line">      function Fw() &#123;</div><div class="line">        // var A = 3; // 第3步，在作用域Fw中找，找到则返回3，否则到创建Fw的全局作用域中找</div><div class="line"></div><div class="line">        function Fm() &#123;</div><div class="line">          // var A = 2; // 第2步，在作用域Fm中找，找到则返回2，否则到创建Fm的Fw中找</div><div class="line"></div><div class="line">          function Fn() &#123;</div><div class="line">            // var A = 1; // 第1步，在当前作用域找，找到则返回1，否则到创建Fn的Fm中找</div><div class="line">            console.log(A);</div><div class="line">          &#125;</div><div class="line">          return Fn();</div><div class="line">        &#125;</div><div class="line">        return Fm();</div><div class="line">      &#125;</div><div class="line">      Fw();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    注意：这里说的创建Fn的那个作用域，而不是调用Fn的那个作用域，也不是“父作用域”。详情参考【自由变量及其取值规则 &gt; 自由变量取值规则】中的实例。</div><div class="line"></div><div class="line">15. 闭包</div><div class="line">  要想理解闭包，前面的【作用域、自由变量、作用域链】三部分是基础。</div><div class="line">  闭包的两种形式：函数作为返回值、函数作为参数被传递。</div><div class="line">  第一，函数作为返回值</div><div class="line">    function fn() &#123;</div><div class="line">      var max = 10;</div><div class="line">      return function bar(x) &#123;</div><div class="line">        if (x &gt; max) &#123; // max是自由变量，取值规则，参考【自由变量及其取值规则】</div><div class="line">          console.log(x);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    var f1 = fn();</div><div class="line">    f1(15); // 15</div><div class="line">  第二，函数作为参数被传递</div><div class="line">    var max = 10,</div><div class="line">        fn = function(x) &#123;</div><div class="line">          if (x &gt; max) &#123; // max是自由变量，取值规则，参考【自由变量及其取值规则】</div><div class="line">            console.log(x);</div><div class="line">          &#125;</div><div class="line">        &#125;;</div><div class="line">    (function(f) &#123;</div><div class="line">      var max = 100;</div><div class="line">      f(15); // 15</div><div class="line">    &#125;)(fn)</div><div class="line"></div><div class="line">  另外，在【执行上下文栈】中说到，每个函数执行完毕，都会销毁其函数上下文环境，并清空数据。但是闭包函数执行完后，上下文环境不会被销毁。因为闭包中函数会返回或者作为参数被传递，在其他地方会被用到，一旦销毁，调用闭包的地方就无法再使用了。所以闭包会增加内容开销。</div><div class="line">  参考：http://www.cnblogs.com/wangfupeng1988/p/3994065.html</div></pre></td></tr></table></figure>
+        </div>
+        
+        <blockquote class="post-copyright">
+    <div class="content">
+        险觅天应闷，狂搜海亦枯。不同文赋易，为著之者乎：<a href="/2016/12/02/javascript-high/" target="_blank" rel="external">http://lhyin.com/2016/12/02/javascript-high/</a>
+    </div>
+    <footer>
+        <a href="http://lhyin.com">
+            <img src="/img/author.jpg" alt="殷路辉(Alec)">
+            殷路辉(Alec)
+        </a>
+    </footer>
+</blockquote>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/12/02/javascript-high/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《会当凌绝顶：JavaScript高级内容》 — Alec Yin's World&url=http://lhyin.com/2016/12/02/javascript-high/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/12/02/javascript-high/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>   
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/11/28/mingju-1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">常见的诗词名句出处</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+    
+<div class="duoshuo" id="comments">
+	<div class="ds-thread" data-thread-key="javascript-high" data-title="会当凌绝顶：JavaScript高级内容" data-url="http://lhyin.com/2016/12/02/javascript-high/"></div>
+</div>
+<script src="/js/embed.min.js?v=1.2"></script>
+<script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
+<script>
+var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
+</script>
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        妆罢低声问夫婿，画眉深浅入时无？
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+  </main>
+  <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
+
+
+
+<div class="global-share" id="globalShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Alec Yin's World&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Alec Yin's World&source=殷路辉的博客。技术只是服务生活的方式，而不是牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2016/12/02/javascript-high/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《会当凌绝顶：JavaScript高级内容》 — Alec Yin's World&url=http://lhyin.com/2016/12/02/javascript-high/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2016/12/02/javascript-high/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2016/12/02/javascript-high/" alt="微信分享二维码"/>
+</div>
+
+
+
+
+<script>
+// 百度站长：搜索收录
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+// 百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?280a86e99e0ecf841596b5e4d3c87d38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script src="/js/main.min.js?v=1.2"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.2"></script>
+
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-87959800-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+</body>
+</html>
