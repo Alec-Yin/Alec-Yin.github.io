@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lhyin.com/about/index.html</loc>
+    
+    <lastmod>2017-04-01T09:41:08.334Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lhyin.com/links/index.html</loc>
     
     <lastmod>2016-12-09T07:57:57.139Z</lastmod>
@@ -103,13 +110,6 @@
     <loc>http://lhyin.com/categories/index.html</loc>
     
     <lastmod>2016-11-23T02:19:35.715Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lhyin.com/about/index.html</loc>
-    
-    <lastmod>2016-11-23T02:19:35.667Z</lastmod>
     
   </url>
   
