@@ -1,3 +1,5 @@
+http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/
+http://lhyin.com/2017/04/01/React-Redux-Basic/
 http://lhyin.com/2016/12/02/javascript-high/
 http://lhyin.com/2016/11/28/mingju-1/
 http://lhyin.com/2016/11/28/arithmetic/
