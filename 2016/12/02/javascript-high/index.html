@@ -7,7 +7,7 @@
   
   
   
-  <title>会当凌绝顶：JavaScript高级内容 | Web Coding, World Changing | 每一次键盘的跳动，世界都在悄然改变着</title>
+  <title>JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包 | Web Coding, World Changing | 每一次键盘的跳动，世界都在悄然改变着</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3F51B5">
@@ -16,15 +16,15 @@
   <meta name="keywords" content="JavaScript">
   <meta name="description" content="1.值类型 &amp;amp; 引用类型function show(x) &amp;#123;    console.log(typeof(x));    // undefined    console.log(typeof(10));   // number    console.log(typeof(&apos;abc&apos;)); // string    console.log(typeof(true));  // bo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="会当凌绝顶：JavaScript高级内容">
+<meta property="og:title" content="JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包">
 <meta property="og:url" content="http://lhyin.com/2016/12/02/javascript-high/index.html">
 <meta property="og:site_name" content="Web Coding, World Changing">
 <meta property="og:description" content="1.值类型 &amp;amp; 引用类型function show(x) &amp;#123;    console.log(typeof(x));    // undefined    console.log(typeof(10));   // number    console.log(typeof(&apos;abc&apos;)); // string    console.log(typeof(true));  // bo">
 <meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/javascript_object_layout.jpg">
 <meta property="og:image" content="http://oh16enj0m.bkt.clouddn.com/jszhan.png">
-<meta property="og:updated_time" content="2016-12-09T07:28:47.403Z">
+<meta property="og:updated_time" content="2017-04-17T09:44:27.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="会当凌绝顶：JavaScript高级内容">
+<meta name="twitter:title" content="JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包">
 <meta name="twitter:description" content="1.值类型 &amp;amp; 引用类型function show(x) &amp;#123;    console.log(typeof(x));    // undefined    console.log(typeof(10));   // number    console.log(typeof(&apos;abc&apos;)); // string    console.log(typeof(true));  // bo">
 <meta name="twitter:image" content="http://oh16enj0m.bkt.clouddn.com/javascript_object_layout.jpg">
   
@@ -152,7 +152,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">会当凌绝顶：JavaScript高级内容</div>
+        <div class="flex-col header-title ellipsis">JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -174,7 +174,7 @@
 <header class="content-header post-header">
 
     <div class="container">
-        <h1 class="title">会当凌绝顶：JavaScript高级内容</h1>
+        <h1 class="title">JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包</h1>
         <h5 class="subtitle">
             
                 <time datetime="2016-12-02T12:59:36.000Z" itemprop="datePublished" class="page-time">
@@ -195,7 +195,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-值类型-amp-引用类型"><span class="post-toc-text">1.值类型 & 引用类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-语法糖（糖衣语法）"><span class="post-toc-text">2. 语法糖（糖衣语法）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-对象都是通过函数创建的，而函数又是一种对象"><span class="post-toc-text">3. 对象都是通过函数创建的，而函数又是一种对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-构造函数"><span class="post-toc-text">4. 构造函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-prototype-与-proto"><span class="post-toc-text">5. prototype 与 __proto__</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-instanceof原理"><span class="post-toc-text">6. instanceof原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-原型链"><span class="post-toc-text">7. 原型链</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-继承"><span class="post-toc-text">8. 继承</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-执行上下文-执行上下文环境"><span class="post-toc-text">9. 执行上下文/执行上下文环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-执行上下文栈"><span class="post-toc-text">10. 执行上下文栈</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#11-this"><span class="post-toc-text">11. this</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#12-作用域"><span class="post-toc-text">12. 作用域</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#14-作用域链"><span class="post-toc-text">14. 作用域链</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#15-闭包"><span class="post-toc-text">15. 闭包</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#1-值类型-amp-引用类型"><span class="post-toc-text">1.值类型 & 引用类型</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#2-语法糖（糖衣语法）"><span class="post-toc-text">2. 语法糖（糖衣语法）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#3-对象都是通过函数创建的，而函数又是一种对象"><span class="post-toc-text">3. 对象都是通过函数创建的，而函数又是一种对象</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#4-构造函数"><span class="post-toc-text">4. 构造函数</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#5-prototype-与-proto"><span class="post-toc-text">5. prototype 与 __proto__</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#6-instanceof原理"><span class="post-toc-text">6. instanceof原理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#7-原型链"><span class="post-toc-text">7. 原型链</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#8-继承"><span class="post-toc-text">8. 继承</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#9-执行上下文-执行上下文环境"><span class="post-toc-text">9. 执行上下文/执行上下文环境</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#10-执行上下文栈"><span class="post-toc-text">10. 执行上下文栈</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#11-this"><span class="post-toc-text">11. this</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#12-作用域"><span class="post-toc-text">12. 作用域</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#13-自由变量及其取值规则"><span class="post-toc-text">13. 自由变量及其取值规则</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#14-作用域链"><span class="post-toc-text">14. 作用域链</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#15-闭包"><span class="post-toc-text">15. 闭包</span></a></li></ol>
         </nav>
     </aside>
     
@@ -203,7 +203,7 @@
   class="post-article article-type-it" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">会当凌绝顶：JavaScript高级内容</h1>
+        <h1 class="post-card-title">JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包</h1>
         <div class="post-meta">
             <time datetime="2016-12-02T12:59:36.000Z" itemprop="datePublished" class="post-time">
   2016-12-02
@@ -301,12 +301,7 @@
 <pre><code>如：
 </code></pre><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="keyword">var</span> a =<span class="number">1</span>,b=<span class="number">2</span>;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> a=<span class="number">100</span>,b=<span class="number">200</span>;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">var</span> a=<span class="number">1000</span>,b=<span class="number">2000</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>三个作用域下都声明了“a和b”变量，但是他们不会有冲突。各自的作用域下，用各自的“a和b”。</p>
-<blockquote>
-<ol>
-<li>自由变量及其取值规则<br>在A作用域中使用的变量x，却没有在A作用域中声明（即在其他作用域中声明的），对于A作用域来说，x就是一个自由变量。<br>如：<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> x=<span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> b=<span class="number">2</span>;</div><div class="line">  <span class="built_in">console</span>.log(x+b); <span class="comment">// 这里的x就是自由变量</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-</blockquote>
+<h1 id="13-自由变量及其取值规则"><a href="#13-自由变量及其取值规则" class="headerlink" title="13. 自由变量及其取值规则"></a>13. 自由变量及其取值规则</h1><p>  在A作用域中使用的变量x，却没有在A作用域中声明（即在其他作用域中声明的），对于A作用域来说，x就是一个自由变量。<br>  如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> x=<span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> b=<span class="number">2</span>;</div><div class="line">  <span class="built_in">console</span>.log(x+b); <span class="comment">// 这里的x就是自由变量</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>自由变量取值规则：要到创建 自由变量所在函数 的那个作用域中取值–是【创建】，而不是【调用】，也不是【父作用域】。</strong><br>  如：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> x=<span class="number">10</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(x); <span class="comment">// fn创建了自由的函数作用域，所以无论什么地方调用它，都会输出10</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params">f</span>)</span>&#123;</div><div class="line">  <span class="keyword">var</span> x=<span class="number">20</span>;</div><div class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(x); <span class="comment">// 要到x所在的匿名函数的作用域中找x，故输出20</span></div><div class="line">    f(); <span class="comment">// 要到创建fn函数的作用域中找x，故这里输出10，而不是20</span></div><div class="line">  &#125;)();</div><div class="line">&#125;</div><div class="line">show(fn);</div></pre></td></tr></table></figure></p>
 <h1 id="14-作用域链"><a href="#14-作用域链" class="headerlink" title="14. 作用域链"></a>14. 作用域链</h1><p>  在自由变量的基础上理解作用域链更加容易。<br>  在作用域Fn中使用一个变量A，如果Fn中没有定义A,则到创建Fn的那个作用域Fm中找，如果仍没有找到，则继续到创建Fm的作用域中找……依次类推，直至找到变量A或者到全局作用域中仍未找到 为止，这种跨越多个作用域的线路，就叫“作用域链”。<br>  代码如下：<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="comment">// var A = 4; // 第4步，这是全局作用域，找到则返回4，如果到这里仍未找到，就结束，报错"A is not defined"</span></div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Fw</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// var A = 3; // 第3步，在作用域Fw中找，找到则返回3，否则到创建Fw的全局作用域中找</span></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Fm</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="comment">// var A = 2; // 第2步，在作用域Fm中找，找到则返回2，否则到创建Fm的Fw中找</span></div><div class="line"></div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="comment">// var A = 1; // 第1步，在当前作用域找，找到则返回1，否则到创建Fn的Fm中找</span></div><div class="line">        <span class="built_in">console</span>.log(A);</div><div class="line">      &#125;</div><div class="line">      <span class="keyword">return</span> Fn();</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> Fm();</div><div class="line">  &#125;</div><div class="line">  Fw();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p><strong>注意：这里说的创建Fn的那个作用域，而不是调用Fn的那个作用域，也不是“父作用域”。详情参考【自由变量及其取值规则 &gt; 自由变量取值规则】中的实例。</strong></p>
@@ -354,7 +349,7 @@
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Web Coding, World Changing&pic=/" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/12/02/javascript-high/&title=《JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包》 — Web Coding, World Changing&pic=/" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -364,7 +359,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/12/02/javascript-high/&title=《JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -374,7 +369,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《会当凌绝顶：JavaScript高级内容》 — Web Coding, World Changing&url=http://lhyin.com/2016/12/02/javascript-high/&via=http://lhyin.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包》 — Web Coding, World Changing&url=http://lhyin.com/2016/12/02/javascript-high/&via=http://lhyin.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -402,9 +397,9 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/04/01/React-Redux-Basic/" id="post-prev" class="post-nav-link">
+      <a href="/2017/04/01/Redux简易开发步骤/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">React+Redux Basic</h4>
+        <h4 class="title">Redux学习笔记：Redux简易开发步骤</h4>
       </a>
     </div>
   
@@ -423,7 +418,7 @@
             
     
 <div class="duoshuo" id="comments">
-	<div class="ds-thread" data-thread-key="javascript-high" data-title="会当凌绝顶：JavaScript高级内容" data-url="http://lhyin.com/2016/12/02/javascript-high/"></div>
+	<div class="ds-thread" data-thread-key="javascript-high" data-title="JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包" data-url="http://lhyin.com/2016/12/02/javascript-high/"></div>
 </div>
 <script src="/js/embed.min.js?v=1.2"></script>
 <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
@@ -477,7 +472,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Web Coding, World Changing&pic=/" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2016/12/02/javascript-high/&title=《JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包》 — Web Coding, World Changing&pic=/" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -487,7 +482,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/12/02/javascript-high/&title=《会当凌绝顶：JavaScript高级内容》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2016/12/02/javascript-high/&title=《JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -497,7 +492,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《会当凌绝顶：JavaScript高级内容》 — Web Coding, World Changing&url=http://lhyin.com/2016/12/02/javascript-high/&via=http://lhyin.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包》 — Web Coding, World Changing&url=http://lhyin.com/2016/12/02/javascript-high/&via=http://lhyin.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>

@@ -3,6 +3,109 @@
 
 
     
+    
+  <url>
+    <loc>http://lhyin.com/2016/11/25/javascript-basic/</loc>
+    <lastmod>2017-04-17T09:45:52.056Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript基础知识笔记</title>
+        <pubTime>2016-11-25T08:11:34.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lhyin.com/2016/11/28/javascript-middle/</loc>
+    <lastmod>2017-04-17T09:45:02.087Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript进阶内容笔记1：各种对象类型判断</title>
+        <pubTime>2016-11-28T07:19:41.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lhyin.com/2016/12/02/javascript-high/</loc>
+    <lastmod>2017-04-17T09:44:27.334Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript高级内容笔记：原型链、继承、执行上下文、作用域链、闭包</title>
+        <pubTime>2016-12-02T12:59:36.000Z</pubTime>
+        
+        <tag>JavaScript</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lhyin.com/2017/04/17/React-Redux%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/</loc>
+    <lastmod>2017-04-17T09:43:04.122Z</lastmod>
+    <data>
+        <display>
+        <title>React+Redux简易开发步骤</title>
+        <pubTime>2017-04-17T09:31:45.000Z</pubTime>
+        
+        <tag>Redux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lhyin.com/2017/04/17/React%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%B6%8A%E7%BA%A7%E4%BC%A0%E9%80%92%E5%B1%9E%E6%80%A7/</loc>
+    <lastmod>2017-04-17T09:31:24.353Z</lastmod>
+    <data>
+        <display>
+        <title>React组件实现越级传递属性</title>
+        <pubTime>2017-04-17T09:23:05.000Z</pubTime>
+        
+        <tag>React</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://lhyin.com/2017/04/01/Redux%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/</loc>
+    <lastmod>2017-04-17T09:22:21.181Z</lastmod>
+    <data>
+        <display>
+        <title>Redux学习笔记：Redux简易开发步骤</title>
+        <pubTime>2017-04-01T10:21:40.000Z</pubTime>
+        
+        <tag>Redux</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
   <url>
     <loc>http://lhyin.com/2017/04/01/lhyin%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E5%8F%8A%E6%8F%90%E4%BA%A4github%E5%92%8Coschina%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
     <lastmod>2017-04-06T07:01:08.935Z</lastmod>
@@ -20,41 +123,6 @@
     </url>
 
     
-  <url>
-    <loc>http://lhyin.com/2017/04/01/React-Redux-Basic/</loc>
-    <lastmod>2017-04-01T10:21:40.900Z</lastmod>
-    <data>
-        <display>
-        <title>React+Redux Basic</title>
-        <pubTime>2017-04-01T10:21:40.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-  <url>
-    <loc>http://lhyin.com/2016/12/02/javascript-high/</loc>
-    <lastmod>2016-12-09T07:28:47.403Z</lastmod>
-    <data>
-        <display>
-        <title>会当凌绝顶：JavaScript高级内容</title>
-        <pubTime>2016-12-02T12:59:36.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://lhyin.com/2016/11/28/mingju-1/</loc>
@@ -136,40 +204,6 @@
         <pubTime>2016-11-28T08:42:17.000Z</pubTime>
         
         <tag>微信开发</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lhyin.com/2016/11/28/javascript-middle/</loc>
-    <lastmod>2016-11-28T08:11:29.567Z</lastmod>
-    <data>
-        <display>
-        <title>更上一层楼：JavaScript中各种对象类型的判断</title>
-        <pubTime>2016-11-28T07:19:41.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://lhyin.com/2016/11/25/javascript-basic/</loc>
-    <lastmod>2016-11-28T07:33:02.075Z</lastmod>
-    <data>
-        <display>
-        <title>温故而知新：JavaScript的16个基础要点</title>
-        <pubTime>2016-11-25T08:11:34.000Z</pubTime>
-        
-        <tag>JavaScript</tag>
          
          
            

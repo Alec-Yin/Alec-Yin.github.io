@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lhyin.com/about/index.html</loc>
+    
+    <lastmod>2017-04-17T10:18:10.133Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhyin.com/2016/11/25/javascript-basic/</loc>
+    
+    <lastmod>2017-04-17T09:45:52.056Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhyin.com/2016/11/28/javascript-middle/</loc>
+    
+    <lastmod>2017-04-17T09:45:02.087Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhyin.com/2016/12/02/javascript-high/</loc>
+    
+    <lastmod>2017-04-17T09:44:27.334Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhyin.com/2017/04/17/React-Redux%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/</loc>
+    
+    <lastmod>2017-04-17T09:43:04.122Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhyin.com/2017/04/17/React%E7%BB%84%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%B6%8A%E7%BA%A7%E4%BC%A0%E9%80%92%E5%B1%9E%E6%80%A7/</loc>
+    
+    <lastmod>2017-04-17T09:31:24.353Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lhyin.com/2017/04/01/Redux%E7%AE%80%E6%98%93%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4/</loc>
+    
+    <lastmod>2017-04-17T09:22:21.181Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lhyin.com/2017/04/01/lhyin%E5%8F%91%E5%B8%83%E6%96%87%E7%AB%A0%E5%8F%8A%E6%8F%90%E4%BA%A4github%E5%92%8Coschina%E5%A4%87%E5%BF%98%E5%BD%95/</loc>
     
     <lastmod>2017-04-06T07:01:08.935Z</lastmod>
@@ -9,30 +58,9 @@
   </url>
   
   <url>
-    <loc>http://lhyin.com/2017/04/01/React-Redux-Basic/</loc>
-    
-    <lastmod>2017-04-01T10:21:40.900Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lhyin.com/about/index.html</loc>
-    
-    <lastmod>2017-04-01T09:41:08.334Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lhyin.com/links/index.html</loc>
     
     <lastmod>2016-12-09T07:57:57.139Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lhyin.com/2016/12/02/javascript-high/</loc>
-    
-    <lastmod>2016-12-09T07:28:47.403Z</lastmod>
     
   </url>
   
@@ -68,20 +96,6 @@
     <loc>http://lhyin.com/2016/11/28/weixin-share/</loc>
     
     <lastmod>2016-11-28T08:47:50.130Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lhyin.com/2016/11/28/javascript-middle/</loc>
-    
-    <lastmod>2016-11-28T08:11:29.567Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lhyin.com/2016/11/25/javascript-basic/</loc>
-    
-    <lastmod>2016-11-28T07:33:02.075Z</lastmod>
     
   </url>
   

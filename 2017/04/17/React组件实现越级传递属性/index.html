@@ -7,26 +7,31 @@
   
   
   
-  <title>lhyin发布文章及提交github、codingNet和oschina备忘录 | Web Coding, World Changing | 每一次键盘的跳动，世界都在悄然改变着</title>
+  <title>React组件实现越级传递属性 | Web Coding, World Changing | 每一次键盘的跳动，世界都在悄然改变着</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="theme-color" content="#3F51B5">
   
   
-  <meta name="keywords" content="JavaScript">
-  <meta name="description" content="代码源源代码源代码存放在oschina上(本地镜像 myblog_my)：Alec-yin/myblog
-发布版本发布版本分别存放在github（国外）和码市（国内，codingNet）上：github: https://github.com/Alec-Yin/Alec-Yin.github.io.gitcodingNet: https://git.coding.net/Alec-Yin/Alec">
+  <meta name="keywords" content="React">
+  <meta name="description" content="如果有这样一个结构：三级嵌套，分别是：一级父组件、二级子组件、三级孙子组件，且前者包含后者，结构如图：
+如果把一个属性，比如color，从一级传递给三级，一般做法是使用props逐一向下传递，代码如下：
+// 一级父组件class Level1 extends React.Component&amp;#123;    render()&amp;#123;        return  &amp;lt;Level2 col">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lhyin发布文章及提交github、codingNet和oschina备忘录">
-<meta property="og:url" content="http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/index.html">
+<meta property="og:title" content="React组件实现越级传递属性">
+<meta property="og:url" content="http://lhyin.com/2017/04/17/React组件实现越级传递属性/index.html">
 <meta property="og:site_name" content="Web Coding, World Changing">
-<meta property="og:description" content="代码源源代码源代码存放在oschina上(本地镜像 myblog_my)：Alec-yin/myblog
-发布版本发布版本分别存放在github（国外）和码市（国内，codingNet）上：github: https://github.com/Alec-Yin/Alec-Yin.github.io.gitcodingNet: https://git.coding.net/Alec-Yin/Alec">
-<meta property="og:updated_time" content="2017-04-06T07:01:08.935Z">
+<meta property="og:description" content="如果有这样一个结构：三级嵌套，分别是：一级父组件、二级子组件、三级孙子组件，且前者包含后者，结构如图：
+如果把一个属性，比如color，从一级传递给三级，一般做法是使用props逐一向下传递，代码如下：
+// 一级父组件class Level1 extends React.Component&amp;#123;    render()&amp;#123;        return  &amp;lt;Level2 col">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/294624/201704/294624-20170414194908533-266524713.jpg">
+<meta property="og:updated_time" content="2017-04-17T09:31:24.353Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lhyin发布文章及提交github、codingNet和oschina备忘录">
-<meta name="twitter:description" content="代码源源代码源代码存放在oschina上(本地镜像 myblog_my)：Alec-yin/myblog
-发布版本发布版本分别存放在github（国外）和码市（国内，codingNet）上：github: https://github.com/Alec-Yin/Alec-Yin.github.io.gitcodingNet: https://git.coding.net/Alec-Yin/Alec">
+<meta name="twitter:title" content="React组件实现越级传递属性">
+<meta name="twitter:description" content="如果有这样一个结构：三级嵌套，分别是：一级父组件、二级子组件、三级孙子组件，且前者包含后者，结构如图：
+如果把一个属性，比如color，从一级传递给三级，一般做法是使用props逐一向下传递，代码如下：
+// 一级父组件class Level1 extends React.Component&amp;#123;    render()&amp;#123;        return  &amp;lt;Level2 col">
+<meta name="twitter:image" content="http://images2015.cnblogs.com/blog/294624/201704/294624-20170414194908533-266524713.jpg">
   
   <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
   <link rel="stylesheet" href="/css/style.css?v=1.2">
@@ -152,7 +157,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">lhyin发布文章及提交github、codingNet和oschina备忘录</div>
+        <div class="flex-col header-title ellipsis">React组件实现越级传递属性</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -174,11 +179,11 @@
 <header class="content-header post-header">
 
     <div class="container">
-        <h1 class="title">lhyin发布文章及提交github、codingNet和oschina备忘录</h1>
+        <h1 class="title">React组件实现越级传递属性</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-04-01T10:26:37.000Z" itemprop="datePublished" class="page-time">
-  2017-04-01
+                <time datetime="2017-04-17T09:23:05.000Z" itemprop="datePublished" class="page-time">
+  2017-04-17
 </time>
 
 
@@ -192,21 +197,14 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#代码源"><span class="post-toc-text">代码源</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#写文章"><span class="post-toc-text">写文章</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#部署及发布"><span class="post-toc-text">部署及发布</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#提交代码到oschina"><span class="post-toc-text">提交代码到oschina</span></a></li></ol>
-        </nav>
-    </aside>
-    
-<article id="it-lhyin发布文章及提交github和oschina备忘录" 
+<article id="it-React组件实现越级传递属性" 
   class="post-article article-type-it" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">lhyin发布文章及提交github、codingNet和oschina备忘录</h1>
+        <h1 class="post-card-title">React组件实现越级传递属性</h1>
         <div class="post-meta">
-            <time datetime="2017-04-01T10:26:37.000Z" itemprop="datePublished" class="post-time">
-  2017-04-01
+            <time datetime="2017-04-17T09:23:05.000Z" itemprop="datePublished" class="post-time">
+  2017-04-17
 </time>
 
             
@@ -217,47 +215,20 @@
             </span>
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="代码源"><a href="#代码源" class="headerlink" title="代码源"></a>代码源</h1><p><strong>源代码</strong><br>源代码存放在oschina上(本地镜像 myblog_my)：Alec-yin/myblog</p>
-<p><strong>发布版本</strong><br>发布版本分别存放在github（国外）和码市（国内，codingNet）上：<br>github: <a href="https://github.com/Alec-Yin/Alec-Yin.github.io.git" target="_blank" rel="external">https://github.com/Alec-Yin/Alec-Yin.github.io.git</a><br>codingNet: <a href="https://git.coding.net/Alec-Yin/Alec-Yin.coding.io.git" target="_blank" rel="external">https://git.coding.net/Alec-Yin/Alec-Yin.coding.io.git</a></p>
-<h1 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h1><p><strong>打开oschina博客源代码</strong><br>找到oschina对应的本地代码（第一次使用，需要执行npm install并初始化hexo环境）。该代码只是源代码环境，发布后，hexo会把发布后的代码自动提交到github和codingNet上（因为这两者可Pages服务可以直接绑定域名lhyin.com）。</p>
-<p><strong>git Bash或Cmder定位到myblog_gh根目录</strong><br>这里是hexo初始化环境的目录，编辑、编译、发布都要在此目录。</p>
-<p><strong>创建博客文章</strong></p>
-<ul>
-<li>技术类<blockquote>
-<p>$ hexo new it “文章名称”<br>或<br>$ hexo new “文章名称” <font color="#0000ff">//因为_config.yml的default_layout默认为 it 类型博客</font></p>
-</blockquote>
-</li>
-</ul>
-<p>说明：文章会在source/_posts 目录下生成名为【it-文章名称.md】的文件，直接在里面编辑就行了。以下雷同。</p>
-<ul>
-<li><p>语文课文</p>
-<blockquote>
-<p>$ hexo new article “文章名称”</p>
-</blockquote>
-</li>
-<li><p>诗词</p>
-<blockquote>
-<p>$ hexo new poetry “文章名称”</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="部署及发布"><a href="#部署及发布" class="headerlink" title="部署及发布"></a>部署及发布</h1><p><strong>监控修改</strong></p>
-<blockquote>
-<p>$ hexo s -g<br>$ hexo server -generate</p>
-</blockquote>
-<p>说明：hexo generate是生成静态页面；hexo server是启动本地调试（<a href="http://localhost:4000）" target="_blank" rel="external">http://localhost:4000）</a></p>
-<p><strong>部署并提交代码</strong><br>每次部署的步骤，可按以下三步来进行。</p>
-<blockquote>
-<p>$ hexo clean <font color="#0000ff">//清除缓存文件 (db.json) 和已生成的静态文件 (public)</font><br>$ hexo generate （==$ hexo g）<font color="#0000ff">//生成静态文件</font><br>$ hexo deploy （==$ hexo d）<font color="#0000ff">//部署网站</font></p>
-</blockquote>
-<p>更多命令：<a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">https://hexo.io/zh-cn/docs/commands.html</a></p>
-<h1 id="提交代码到oschina"><a href="#提交代码到oschina" class="headerlink" title="提交代码到oschina"></a>提交代码到oschina</h1><p>把刚才myblog_gh下的文件拷贝到myblog_my中，只拷贝业务文件夹即可，去除.deploy_git、node_modules、.git文件。</p>
+            <p>如果有这样一个结构：三级嵌套，分别是：一级父组件、二级子组件、三级孙子组件，且前者包含后者，结构如图：<br><img src="http://images2015.cnblogs.com/blog/294624/201704/294624-20170414194908533-266524713.jpg" alt=""></p>
+<p>如果把一个属性，比如color，从一级传递给三级，一般做法是使用props逐一向下传递，代码如下：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 一级父组件</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Level1</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span>  &lt;Level2 color='red'/&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 二级子组件</div><div class="line">class Level2 extends React.Component&#123;</div><div class="line">    render()&#123;</div><div class="line">        return  &lt;Level3 color=&#123;this.props.color&#125;/&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// 三级孙子组件</div><div class="line">class Level3 extends React.Component&#123;</div><div class="line">    render()&#123;</div><div class="line">        return  &lt;div color=&#123;&#123;color: this.props.color&#125;&#125;/&gt;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>看代码会发现，level2根本没有用到color，但是为了在level3中使用，它还是不得不写上color={this.props.color}。一是代码冗余，二是如果后期把color改成txt或者增加一个属性，改起来复杂。那么如何把color直接从level1给level3呢？答案是：使用伟大的Context实现越级传递。</p>
+<p>直接上代码：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 一级父组件</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Level1</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    <span class="comment">// ****第2步：给子类共用属性赋值****</span></div><div class="line">    getChildContext() &#123;</div><div class="line">        <span class="keyword">return</span> &#123;<span class="attr">color</span>: <span class="string">"red"</span>&#125;;</div><div class="line">    &#125;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Level2</span>/&gt;</span></span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// ****第1步：定义子类们共用的属性及类型****</span></div><div class="line">Level1.childContextTypes = &#123;</div><div class="line">  <span class="attr">color</span>: React.PropTypes.string</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="comment">// 二级子组件</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Level2</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">Level3</span>/&gt;</span></span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 三级孙子组件</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Level3</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span></span>&#123;</div><div class="line">    render()&#123;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">color</span>=<span class="string">&#123;&#123;color:</span> <span class="attr">this.context.color</span>&#125;&#125;/&gt;</span> // ****第4步：使用this.context接受越级传递的参数****</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// ****第3步：定义子组件从组件需要接受的属性和类型****</div><div class="line">Level3.contextTypes = &#123;</div><div class="line">  color: React.PropTypes.string</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>每一步的说明，也都在备注里了，这里就不再一一解读了。</p>
+<p>另外，在React+Redux中，Provider组件通过context方式把store传递给所有容器和子组件的方式，底层也是利用了这个原理。</p>
 
         </div>
         
         <blockquote class="post-copyright">
     <div class="content">
-        内容很丰富，转载有出处：<a href="/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" target="_blank" rel="external">http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/</a>
+        内容很丰富，转载有出处：<a href="/2017/04/17/React组件实现越级传递属性/" target="_blank" rel="external">http://lhyin.com/2017/04/17/React组件实现越级传递属性/</a>
     </div>
     <footer>
         <a href="http://lhyin.com">
@@ -275,7 +246,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li></ul>
 
 
             
@@ -286,7 +257,7 @@
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/&title=《lhyin发布文章及提交github、codingNet和oschina备忘录》 — Web Coding, World Changing&pic=/" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/&title=《React组件实现越级传递属性》 — Web Coding, World Changing&pic=/" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -296,22 +267,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/&title=《lhyin发布文章及提交github、codingNet和oschina备忘录》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/&title=《React组件实现越级传递属性》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2017/04/17/React组件实现越级传递属性/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《lhyin发布文章及提交github、codingNet和oschina备忘录》 — Web Coding, World Changing&url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/&via=http://lhyin.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React组件实现越级传递属性》 — Web Coding, World Changing&url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/&via=http://lhyin.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -334,18 +305,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/04/17/React组件实现越级传递属性/" id="post-prev" class="post-nav-link">
+      <a href="/2017/04/17/React-Redux简易开发步骤/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">React组件实现越级传递属性</h4>
+        <h4 class="title">React+Redux简易开发步骤</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/04/01/Redux简易开发步骤/" id="post-next" class="post-nav-link">
+      <a href="/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Redux学习笔记：Redux简易开发步骤</h4>
+        <h4 class="title">lhyin发布文章及提交github、codingNet和oschina备忘录</h4>
       </a>
     </div>
   
@@ -355,7 +326,7 @@
             
     
 <div class="duoshuo" id="comments">
-	<div class="ds-thread" data-thread-key="lhyin发布文章及提交github和oschina备忘录" data-title="lhyin发布文章及提交github、codingNet和oschina备忘录" data-url="http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/"></div>
+	<div class="ds-thread" data-thread-key="React组件实现越级传递属性" data-title="React组件实现越级传递属性" data-url="http://lhyin.com/2017/04/17/React组件实现越级传递属性/"></div>
 </div>
 <script src="/js/embed.min.js?v=1.2"></script>
 <script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
@@ -409,7 +380,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
     <div class="tit">分享到：</div>
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/&title=《lhyin发布文章及提交github、codingNet和oschina备忘录》 — Web Coding, World Changing&pic=/" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/&title=《React组件实现越级传递属性》 — Web Coding, World Changing&pic=/" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -419,22 +390,22 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/&title=《lhyin发布文章及提交github、codingNet和oschina备忘录》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/&title=《React组件实现越级传递属性》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2017/04/17/React组件实现越级传递属性/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《lhyin发布文章及提交github、codingNet和oschina备忘录》 — Web Coding, World Changing&url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/&via=http://lhyin.com" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React组件实现越级传递属性》 — Web Coding, World Changing&url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/&via=http://lhyin.com" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -445,7 +416,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2017/04/01/lhyin发布文章及提交github和oschina备忘录/" alt="微信分享二维码"/>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2017/04/17/React组件实现越级传递属性/" alt="微信分享二维码"/>
 </div>
 
 

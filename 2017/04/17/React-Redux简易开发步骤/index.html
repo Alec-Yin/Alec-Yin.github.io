@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="google-site-verification" content="true">
+  
+  
+  
+  <title>React+Redux简易开发步骤 | Web Coding, World Changing | 每一次键盘的跳动，世界都在悄然改变着</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <meta name="theme-color" content="#3F51B5">
+  
+  
+  <meta name="keywords" content="Redux">
+  <meta name="description" content="前言React+Redux 分为两部分：
+
+UI组件：即React组件，也叫用户自定义UI组件，用于渲染DOM
+容器组件：即Redux逻辑，处理数据和业务逻辑，支持所有Redux API，参考之前的文章：Redux学习笔记：Redux简易开发步骤
+
+而React+Redux是以上两部分结合起来，方便在React中使用Redux，专用库为React-Redux.js。React-Redux.js新增">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React+Redux简易开发步骤">
+<meta property="og:url" content="http://lhyin.com/2017/04/17/React-Redux简易开发步骤/index.html">
+<meta property="og:site_name" content="Web Coding, World Changing">
+<meta property="og:description" content="前言React+Redux 分为两部分：
+
+UI组件：即React组件，也叫用户自定义UI组件，用于渲染DOM
+容器组件：即Redux逻辑，处理数据和业务逻辑，支持所有Redux API，参考之前的文章：Redux学习笔记：Redux简易开发步骤
+
+而React+Redux是以上两部分结合起来，方便在React中使用Redux，专用库为React-Redux.js。React-Redux.js新增">
+<meta property="og:updated_time" content="2017-04-17T09:43:04.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="React+Redux简易开发步骤">
+<meta name="twitter:description" content="前言React+Redux 分为两部分：
+
+UI组件：即React组件，也叫用户自定义UI组件，用于渲染DOM
+容器组件：即Redux逻辑，处理数据和业务逻辑，支持所有Redux API，参考之前的文章：Redux学习笔记：Redux简易开发步骤
+
+而React+Redux是以上两部分结合起来，方便在React中使用Redux，专用库为React-Redux.js。React-Redux.js新增">
+  
+  <link rel="icon" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico"><link rel="apple-touch-icon-precomposed" href="/img/favicon.ico">
+  <link rel="stylesheet" href="/css/style.css?v=1.2">
+</head>
+
+<body>
+  <div id="loading" class="active"></div>
+
+  <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-angle-double-left"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/author.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">殷路辉(Alec)</h5>
+          <a href="mailto:1020362662@qq.com" title="1020362662@qq.com" class="mail">1020362662@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-clock-o"></i>
+                时间归档
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-file-code-o"></i>
+                技术文章
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-heart"></i>
+                诗文收藏
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://git.oschina.net/yinluhui" target="_blank" >
+                <i class="icon icon-lg icon-git"></i>
+                开源中国
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/Alec-Yin" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.cnblogs.com/yinluhui0229" target="_blank" >
+                <i class="icon icon-lg icon-rss-square"></i>
+                博客园
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-online/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-tv"></i>
+                我的PC前端框架
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://yinluhui.oschina.io/turtle-mobile/code/views/index.html" target="_blank" >
+                <i class="icon icon-lg icon-mobile"></i>
+                我的无线前端框架
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-male"></i>
+                关于我
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/links"  >
+                <i class="icon icon-lg icon-link"></i>
+                友情链接
+              </a>
+            </li>
+        
+      </ul>
+
+      <footer class="footer">
+  <p>人气指数：<span id="busuanzi_value_site_uv" class="uvNum">ing...</span></p>
+  <p>Web Coding, World Changing &copy; 2016 - 2017</p>
+  <p>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme
+  <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></p>
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  </script>
+</footer>
+
+    </div>
+  </div>
+</aside>
+
+  <main id="main">
+    <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">React+Redux简易开发步骤</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container">
+        <h1 class="title">React+Redux简易开发步骤</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-04-17T09:31:45.000Z" itemprop="datePublished" class="page-time">
+  2017-04-17
+</time>
+
+
+            
+        </h5>
+    </div>
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前言"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源代码"><span class="post-toc-text">源代码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体开发步骤"><span class="post-toc-text">具体开发步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-创建主文件js，比如index-js"><span class="post-toc-text">1.创建主文件js，比如index.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-定义Render入口，即容器组件"><span class="post-toc-text">2.定义Render入口，即容器组件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-connect根据UI组件生成容器组件，并定义输入（mapStateToProps）、输出（mapDispatchToProps）逻辑"><span class="post-toc-text">3.connect根据UI组件生成容器组件，并定义输入（mapStateToProps）、输出（mapDispatchToProps）逻辑</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-定义用户自定义UI组件，即React-Component"><span class="post-toc-text">4.定义用户自定义UI组件，即React Component</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-定义输入输出逻辑"><span class="post-toc-text">5.定义输入输出逻辑</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-创建store，并绑定reducer"><span class="post-toc-text">6.创建store，并绑定reducer</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-定义Reducer，生成新的state"><span class="post-toc-text">7.定义Reducer，生成新的state</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="it-React-Redux简易开发步骤" 
+  class="post-article article-type-it" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">React+Redux简易开发步骤</h1>
+        <div class="post-meta">
+            <time datetime="2017-04-17T09:31:45.000Z" itemprop="datePublished" class="post-time">
+  2017-04-17
+</time>
+
+            
+
+
+            <span id="busuanzi_container_page_pv" class="post-time">
+              阅读(<span id="busuanzi_value_page_pv">ing...</span>)
+            </span>
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a><font color="blue">前言</font></h2><p>React+Redux 分为两部分：</p>
+<ul>
+<li>UI组件：即React组件，也叫用户自定义UI组件，用于渲染DOM</li>
+<li>容器组件：即Redux逻辑，处理数据和业务逻辑，支持所有Redux API，参考之前的文章：Redux学习笔记：Redux简易开发步骤</li>
+</ul>
+<p>而React+Redux是以上两部分结合起来，方便在React中使用Redux，专用库为React-Redux.js。<br>React-Redux.js新增了一些新方法：</p>
+<ul>
+<li>Provider：容器跟组件，可直接把外部的state传递给所有子组件和UI组件；</li>
+<li>mapStateToProps：输入逻辑，把外部的state转化为props对象传递给用户自定义UI组件；</li>
+<li>mapDispatchToProps：输出逻辑，根据用户的操作，处理具体Action，并通过dispatch触发更新state；</li>
+<li>connect：根据UI组件、输入逻辑、输出逻辑生成容器组件；</li>
+</ul>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a><font color="blue">源代码</font></h2><blockquote>
+<p>本文实例源代码参考：<a href="http://git.oschina.net/yinluhui/React-Redux-Primary-Demo" target="_blank" rel="external">React-Redux-Primary-Demo</a> 中的webapp/redux/index2.js。<br>演示地址：<a href="http://yinluhui.oschina.io/react-redux-primary-demo/webapp/view/index2.html" target="_blank" rel="external">React-Redux实例演示</a></p>
+</blockquote>
+<h2 id="具体开发步骤"><a href="#具体开发步骤" class="headerlink" title="具体开发步骤"></a><font color="blue">具体开发步骤</font></h2><h4 id="1-创建主文件js，比如index-js"><a href="#1-创建主文件js，比如index-js" class="headerlink" title="1.创建主文件js，比如index.js"></a>1.创建主文件js，比如index.js</h4><h4 id="2-定义Render入口，即容器组件"><a href="#2-定义Render入口，即容器组件" class="headerlink" title="2.定义Render入口，即容器组件"></a>2.定义Render入口，即容器组件</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Provider</span> <span class="attr">store</span>=<span class="string">&#123;store&#125;</span>&gt;</span></span></div><div class="line">    <span class="tag">&lt;<span class="name">App</span> /&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">Provider</span>&gt;</span>,</div><div class="line">  <span class="built_in">document</span>.getElementById(<span class="string">'root'</span>)</div><div class="line">)</div></pre></td></tr></table></figure>
+<font color="red">说明：<provider>是包裹在所有容器外面的根组件，目的是可以直接传递state给所有子组件。（利用React组件的context,可参考：React组件实现越级传递属性）</provider></font>
+
+<h4 id="3-connect根据UI组件生成容器组件，并定义输入（mapStateToProps）、输出（mapDispatchToProps）逻辑"><a href="#3-connect根据UI组件生成容器组件，并定义输入（mapStateToProps）、输出（mapDispatchToProps）逻辑" class="headerlink" title="3.connect根据UI组件生成容器组件，并定义输入（mapStateToProps）、输出（mapDispatchToProps）逻辑"></a>3.connect根据UI组件生成容器组件，并定义输入（mapStateToProps）、输出（mapDispatchToProps）逻辑</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> App = connect(</div><div class="line">  mapStateToProps,</div><div class="line">  mapDispatchToProps</div><div class="line">)(Counter)</div></pre></td></tr></table></figure>
+<font color="red">说明：connect将用户自定义的UI组件（即Counter）和React-Redux自动生成的容器组件（即App）连起来，目的是：前者负责UI展示，后者负责逻辑处理。</font> 
+
+<h4 id="4-定义用户自定义UI组件，即React-Component"><a href="#4-定义用户自定义UI组件，即React-Component" class="headerlink" title="4.定义用户自定义UI组件，即React Component"></a>4.定义用户自定义UI组件，即React Component</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Counter</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">const</span> &#123; value, onIncreaseClick &#125; = <span class="keyword">this</span>.props</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></div><div class="line">        <span class="tag">&lt;<span class="name">span</span>&gt;</span>&#123;value&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;onIncreaseClick&#125;</span>&gt;</span>累加一次<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="5-定义输入输出逻辑"><a href="#5-定义输入输出逻辑" class="headerlink" title="5.定义输入输出逻辑"></a>5.定义输入输出逻辑</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">// 输入逻辑：</span></div><div class="line"><span class="comment">//    将state映射成props传递给UI组件（即Counter组件）</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapStateToProps</span>(<span class="params">state</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">value</span>: state.count</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 输出逻辑：</span></div><div class="line"><span class="comment">//    将用户对UI组件的操作映射成Action，通过dispatch，触发reducer（即conter），生成新的state</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">mapDispatchToProps</span>(<span class="params">dispatch</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> &#123;</div><div class="line">    <span class="attr">onIncreaseClick</span>: <span class="function"><span class="params">()</span> =&gt;</span> dispatch(&#123; <span class="attr">type</span>: <span class="string">'increase'</span> &#125;)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="6-创建store，并绑定reducer"><a href="#6-创建store，并绑定reducer" class="headerlink" title="6.创建store，并绑定reducer"></a>6.创建store，并绑定reducer</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> store = createStore(counter); <span class="comment">// createStore的第一个参数必须是个函数，mapDispatchToProps中执行dispatch()时，该函数就叫reducer</span></div></pre></td></tr></table></figure>
+<h4 id="7-定义Reducer，生成新的state"><a href="#7-定义Reducer，生成新的state" class="headerlink" title="7.定义Reducer，生成新的state"></a>7.定义Reducer，生成新的state</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">counter</span>(<span class="params">state = &#123; count: <span class="number">0</span> &#125;, action</span>) </span>&#123;</div><div class="line">  <span class="keyword">const</span> count = state.count</div><div class="line">  <span class="keyword">switch</span> (action.type) &#123;</div><div class="line">    <span class="keyword">case</span> <span class="string">'increase'</span>:</div><div class="line">      <span class="keyword">return</span> &#123; <span class="attr">count</span>: count + <span class="number">1</span> &#125;</div><div class="line">    <span class="keyword">default</span>:</div><div class="line">      <span class="keyword">return</span> state</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<font color="red">说明：state生成之后，会自动触发mapStateToProps，并渲染View，不需要subscribe监听state变化。</font> 
+
+        </div>
+        
+        <blockquote class="post-copyright">
+    <div class="content">
+        内容很丰富，转载有出处：<a href="/2017/04/17/React-Redux简易开发步骤/" target="_blank" rel="external">http://lhyin.com/2017/04/17/React-Redux简易开发步骤/</a>
+    </div>
+    <footer>
+        <a href="http://lhyin.com">
+            <img src="/img/author.jpg" alt="殷路辉(Alec)">
+            殷路辉(Alec)
+        </a>
+    </footer>
+</blockquote>
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redux/">Redux</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/&title=《React+Redux简易开发步骤》 — Web Coding, World Changing&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/&title=《React+Redux简易开发步骤》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React+Redux简易开发步骤》 — Web Coding, World Changing&url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>   
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/17/React组件实现越级传递属性/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">React组件实现越级传递属性</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+            
+    
+<div class="duoshuo" id="comments">
+	<div class="ds-thread" data-thread-key="React-Redux简易开发步骤" data-title="React+Redux简易开发步骤" data-url="http://lhyin.com/2017/04/17/React-Redux简易开发步骤/"></div>
+</div>
+<script src="/js/embed.min.js?v=1.2"></script>
+<script src="//cdn.bootcss.com/marked/0.3.6/marked.min.js" async="async"></script>
+<script>
+var duoshuoQuery = {short_name:'lhyin', theme: 'none'}
+</script>
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        妆罢低声问夫婿，画眉深浅入时无？
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.jpg" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.jpg" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+  </main>
+  <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true }</script>
+
+
+
+<div class="global-share" id="globalShare">
+    <div class="tit">分享到：</div>
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/&title=《React+Redux简易开发步骤》 — Web Coding, World Changing&pic=/" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/&title=《React+Redux简易开发步骤》 — Web Coding, World Changing&source=殷路辉的博客。技术只是服务生活的方式，并非牺牲生活的追求！" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《React+Redux简易开发步骤》 — Web Coding, World Changing&url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/&via=http://lhyin.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="http://s.jiathis.com/qrcode.php?url=http://lhyin.com/2017/04/17/React-Redux简易开发步骤/" alt="微信分享二维码"/>
+</div>
+
+
+
+
+<script>
+// 百度站长：搜索收录
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+// 百度统计
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?280a86e99e0ecf841596b5e4d3c87d38";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+  <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script src="/js/main.min.js?v=1.2"></script>
+
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.2"></script>
+
+
+
+
+
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-87959800-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+</body>
+</html>
